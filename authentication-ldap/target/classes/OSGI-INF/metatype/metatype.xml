@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metatype:MetaData xmlns:metainfo="http://www.osgi.org/xmlns/metatype/v1.0.0">
+    <metatype:OCD description="Creates ServiceObject instances to expose functionalities of connected sap servers." 
+                  name="Sap Authentication Service - Component Factory"
+                  id="tr.com.eno.livo.server.authc.ldap">
+        <AD name="Base DN" 
+            id="ldap.baseDn"
+            required="true"
+            type="String"
+            description="Base DN">
+        </AD>
+        <AD name="DN Key" 
+            id="ldap.dnKey"
+            required="true"
+            type="String"
+            description="Dn key that defines entity(User etc..)">
+        </AD>
+        <AD name="Server Address" 
+            id="ldap.serverAddress"
+            required="true"
+            type="String"
+            description="Server Address">
+        </AD>
+        <AD name="Server Port" 
+            id="ldap.serverPort"
+            required="true"
+            type="String"
+            description="Server Port">
+        </AD>
+        <AD name="SSL Enabled" 
+            id="ldap.sslEnabled"
+            required="true"
+            type="boolean"
+            default="false"
+            description="User Name">
+        </AD>
+    </metatype:OCD>
+    <metatype:Designate pid="tr.com.eno.livo.server.authc.ldap"
+                        factoryPid="tr.com.eno.livo.server.authc.ldap">
+        <metatype:Object ocdref="tr.com.eno.livo.server.authc.ldap"/>
+    </metatype:Designate>
+</metatype:MetaData>

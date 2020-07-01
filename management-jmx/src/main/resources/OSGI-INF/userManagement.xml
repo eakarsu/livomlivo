@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0"
+               name="tr.com.eno.livo.server.management.jmx.users" scr:xmlns="http://www.osgi.org/xmlns/scr/v1.1.0/scr"
+               activate="start" deactivate="stop">
+    <implementation
+        class="tr.com.eno.livo.server.management.jmx.UserManagementServicePublisher" />
+    <reference bind="registerService" cardinality="1..1"
+               interface="tr.com.eno.livo.server.users.UserQueryService"
+               name="UserQueryService" unbind="unregisterService" />
+    <reference bind="registerService" cardinality="1..1"
+               interface="tr.com.eno.livo.server.users.UserManagementService"
+               name="UserManagementService" unbind="unregisterService" />
+</scr:component>

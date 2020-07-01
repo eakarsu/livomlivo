@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Livo Server - Proxy Service for ConfigurationAdmin
+Bundle-SymbolicName: tr.com.eno.livo.server.configurationadmin.proxy
+Bundle-Version: 1.0.0
+Bundle-Vendor: ENO
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: javax.management,
+ org.osgi.framework;version="1.7.0",
+ org.osgi.service.cm,
+ org.slf4j;version="1.7.2"
+Export-Package: tr.com.eno.livo.server.configurationadmin.proxy;version="1.0.0"
+Service-Component: OSGI-INF/*.xml

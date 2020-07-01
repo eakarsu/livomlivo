@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metatype:MetaData xmlns:metatype="http://www.osgi.org/xmlns/metatype/v1.0.0">
+    <metatype:OCD description="Creates ServiceObject instances exposing functionalities of configured REST services." 
+                  name="REST ServiceObjects - Component Factory"
+                  id="tr.com.eno.livo.server.serviceobjects.rest">
+        <AD name="REST Service Name" 
+            id="rest.name"
+            required="true"
+            type="String"
+            description="Name of the REST service">
+        </AD>
+        <AD name="RSDL for the REST service" 
+            id="rest.description"
+            required="true"
+            type="String"
+            description="RESTful Service Description Language (RSDL) for the REST service">
+        </AD>
+    </metatype:OCD>
+    <metatype:Designate pid="tr.com.eno.livo.server.serviceobjects.rest"
+                        factoryPid="tr.com.eno.livo.server.serviceobjects.rest">
+        <metatype:Object ocdref="tr.com.eno.livo.server.serviceobjects.rest"/>
+    </metatype:Designate>
+</metatype:MetaData>

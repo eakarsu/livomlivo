@@ -1,0 +1,7 @@
+tr\com\eno\livo\server\management\jmx\ObjectNames.class
+tr\com\eno\livo\server\management\jmx\ConfigurationAdminServicePublisher.class
+tr\com\eno\livo\server\management\jmx\NotificationPushServicePublisher.class
+tr\com\eno\livo\server\management\jmx\MailServicePublisher.class
+tr\com\eno\livo\server\management\jmx\AnalyticsReportingServicePublisher.class
+tr\com\eno\livo\server\management\jmx\ApplicationServicePublisher.class
+tr\com\eno\livo\server\management\jmx\UserManagementServicePublisher.class

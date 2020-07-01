@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Livo Server - ServiceObjects Configurator Admin
+Bundle-SymbolicName: tr.com.eno.livo.server.serviceobjects.configurator.admin
+Bundle-Version: 1.0.0
+Bundle-Vendor: ENO
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: javax.management,
+ org.osgi.framework;version="1.7.0",
+ org.osgi.util.tracker,
+ org.osgi.service.cm,
+ org.slf4j;version="1.7.2",
+ tr.com.eno.livo.server.authc;version="1.0.0",
+ tr.com.eno.livo.server.serviceobjects;version="1.0.0",
+ tr.com.eno.livo.server.serviceobjects.configurator;version="1.0.0"
+Service-Component: OSGI-INF/*.xml

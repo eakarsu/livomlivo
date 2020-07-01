@@ -1,0 +1,11 @@
+D:\Livo\livo-server\analytics-cassandra\src\main\java\tr\com\eno\livo\server\analytics\cassandra\CassandraAnalyticsReceiverService.java
+D:\Livo\livo-server\analytics-cassandra\src\main\java\tr\com\eno\livo\server\analytics\cassandra\task\ActiveUserCountReportTask.java
+D:\Livo\livo-server\analytics-cassandra\src\main\java\tr\com\eno\livo\server\analytics\cassandra\task\ServiceObjectRequestCountReportTask.java
+D:\Livo\livo-server\analytics-cassandra\src\main\java\tr\com\eno\livo\server\analytics\cassandra\task\ServiceObjectTotalOperationPayloadSizeReportTask.java
+D:\Livo\livo-server\analytics-cassandra\src\main\java\tr\com\eno\livo\server\analytics\cassandra\task\UserActivityDurationReportTask.java
+D:\Livo\livo-server\analytics-cassandra\src\main\java\tr\com\eno\livo\server\analytics\cassandra\task\PlatformDistributionReportTask.java
+D:\Livo\livo-server\analytics-cassandra\src\main\java\tr\com\eno\livo\server\analytics\cassandra\CassandraHelper.java
+D:\Livo\livo-server\analytics-cassandra\src\main\java\tr\com\eno\livo\server\analytics\cassandra\task\AbstractReportTask.java
+D:\Livo\livo-server\analytics-cassandra\src\main\java\tr\com\eno\livo\server\analytics\cassandra\CassandraAnalyticsReportingService.java
+D:\Livo\livo-server\analytics-cassandra\src\main\java\tr\com\eno\livo\server\analytics\cassandra\task\ReportTasksExecutor.java
+D:\Livo\livo-server\analytics-cassandra\src\main\java\tr\com\eno\livo\server\analytics\cassandra\task\CassandraCalculationHelper.java

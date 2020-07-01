@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0"
+	name="tr.com.eno.livo.server.management.jmx.configurationadmin.proxy" scr:xmlns="http://www.osgi.org/xmlns/scr/v1.1.0/scr"
+	activate="start" deactivate="stop" immediate="true">
+	<implementation
+		class="tr.com.eno.livo.server.management.jmx.ConfigurationAdminServicePublisher" />
+	<reference bind="registerService" cardinality="1..1"
+		interface="tr.com.eno.livo.server.configurationadmin.proxy.ConfigurationAdminProxyServiceMBean"
+		name="ConfigurationAdminProxyServiceMBean" unbind="unregisterService" />
+</scr:component>

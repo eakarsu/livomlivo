@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Livo Server - Ldap Authentication
+Bundle-SymbolicName: tr.com.eno.livo.server.authc.ldap
+Bundle-Version: 1.0.0
+Bundle-Vendor: ENO
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Import-Package: tr.com.eno.livo.server.authc;version="1.0.0",
+    org.osgi.framework;version="1.7.0",
+    org.slf4j;version="1.7.7",
+    javax.net,
+    javax.net.ssl,
+    com.unboundid.ldap.sdk;version="2.3.8",
+    com.unboundid.util.ssl;version="2.3.8",
+    org.aspectj.lang,
+    org.aspectj.runtime.internal,
+    org.aspectj.runtime.reflect
+Service-Component: OSGI-INF/*.xml

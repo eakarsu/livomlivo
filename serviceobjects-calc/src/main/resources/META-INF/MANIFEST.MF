@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Livo Server - Calculator Service Object
+Bundle-SymbolicName: tr.com.eno.livo.server.serviceobjects.calculator
+Bundle-Version: 1.0.0
+Bundle-Vendor: ENO
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: tr.com.eno.livo.server.serviceobjects;version="1.0.0",
+ tr.com.eno.livo.server.authc;version="1.0.0",
+ javax.json,
+ javax.servlet
+Service-Component: OSGI-INF/*.xml

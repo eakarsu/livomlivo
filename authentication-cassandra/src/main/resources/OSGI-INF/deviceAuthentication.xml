@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0"
+               name="tr.com.eno.livo.server.authc.cassandra.CassandraDeviceAuthenticationService"
+               scr:xmlns="http://www.osgi.org/xmlns/scr/v1.1.0/scr" immediate="true" activate="start" deactivate="stop">
+    <implementation
+        class="tr.com.eno.livo.server.authc.cassandra.CassandraDeviceAuthenticationService" />
+    <property name="service.pid" type="String"
+                  value="tr.com.eno.livo.server.authc.cassandra.CassandraDeviceAuthenticationService" />
+    <property name="cassandra.host" type="String" value="localhost" />
+    <property name="cassandra.port" type="Integer" value="9042" />
+    <property name="device.limit" type="Integer" value="1" />
+    <service>
+        <provide interface="tr.com.eno.livo.server.authc.DeviceAuthenticationService" />
+    </service>
+</scr:component>
+
+

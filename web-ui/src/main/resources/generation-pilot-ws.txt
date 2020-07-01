@@ -1,0 +1,199 @@
+//Creation of sub-context for non necessary errors if needed.
+//This also means the plugin doesn't load propertly inside the container which 
+//means will cause problems.
+if(typeof Livo=="undefined")
+	Livo={};
+if(typeof Livo.ServiceObjects=="undefined")
+	Livo.ServiceObjects={};
+
+//Creation of the service.
+Livo.ServiceObjects.{servicename}={
+	
+	//Operations
+	operations: new Object(),
+	
+	//Operation definitions.
+	operationDefinitions:{definitions},
+	
+	isOperationsReady:false,
+	
+	serviceObject:{serviceObject},
+	
+	getOperations:function(){
+		
+		Livo.ServiceObjects.getServiceObject(Livo.ServiceObjects.{servicename}.serviceObject,{}, function(a){Livo.ServiceObjects.{servicename}.operations = a;  Livo.ServiceObjects.{servicename}.isOperationsReady = true;}, function(error){
+			console.log(error);
+		});
+	},
+	call:function(functionName,scall,ecall){
+		
+		var data = {};//Data that will be set
+		
+		function createAndInsert(data,positionDefinition,key,value){
+			
+			for( var i = 0; i < positionDefinition.length; i++ ) {
+				
+				data = data[ positionDefinition[i] ] = data[ positionDefinition[i] ] || {};
+			}
+			data[key]=value;
+		}
+		
+		var form = document.getElementById(functionName);
+		var inputs = form.getElementsByTagName("input");
+		for(i=0; i< form.length-1; i++)
+			createAndInsert(data,inputs[i].dataset.tree.split("-"),inputs[i].name,inputs[i].value);
+			
+		Livo.ServiceObjects.{servicename}.operations[functionName](data.root,scall,ecall);
+	},
+	
+	//HTML side can be modified if necessary for design or framework.
+	bind:function(elementId,functionName,successCallback,errorCallback){
+		
+		var form ="<form id = '"+functionName+"'action='javascript:Livo.ServiceObjects.{servicename}.call(\""+functionName+"\","+successCallback+","+errorCallback+");'>";
+		
+		function properInput(element,position){//creating proper input from given element
+			
+			var input;
+			
+			switch(element.type){
+				case "number":
+					if(element.required)
+						input = "<input data-tree='"+position+"' name='"+element.name+"' id='"+element.name+"-id"+"' type='number' placeholder='"+element.placeholder+"'  class='' required/><br>";
+					else
+						input = "<input data-tree='"+position+"' name='"+element.name+"' id='"+element.name+"-id"+"' type='number' placeholder='"+element.placeholder+"'  class='' /><br>";
+					break;
+				case "password":
+					if(element.required)
+						input = "<input data-tree='"+position+"' name='"+element.name+"' id='"+element.name+"-id"+"' type='password' placeholder='"+element.placeholder+"'  class='' required/><br>";
+					else
+						input = "<input data-tree='"+position+"' name='"+element.name+"' id='"+element.name+"-id"+"' type='password' placeholder='"+element.placeholder+"'  class='' /><br>";
+					break;
+				case "text":
+					if(element.required)
+						input = "<input data-tree='"+position+"' name='"+element.name+"' id='"+element.name+"-id"+"' type='text' placeholder='"+element.placeholder+"'  class='' required/><br>";
+					else
+						input = "<input data-tree='"+position+"' name='"+element.name+"' id='"+element.name+"-id"+"' type='text' placeholder='"+element.placeholder+"'  class='' /><br>";
+					break;
+				case "time":
+					if(element.required)
+						input = "<input data-tree='"+position+"' name='"+element.name+"' id='"+element.name+"-id"+"' type='time' placeholder='"+element.placeholder+"'  class='' required/><br>";
+					else
+						input = "<input data-tree='"+position+"' name='"+element.name+"' id='"+element.name+"-id"+"' type='time' placeholder='"+element.placeholder+"'  class='' /><br>";
+					break;
+				case "date":
+					if(element.required)
+						input = "<input data-tree='"+position+"' name='"+element.name+"' id='"+element.name+"-id"+"' type='date' placeholder='"+element.placeholder+"'  class='' required/><br>";
+					else
+						input = "<input data-tree='"+position+"' name='"+element.name+"' id='"+element.name+"-id"+"' type='date' placeholder='"+element.placeholder+"'  class='' /><br>";
+					break;
+				case "double":
+					if(element.required)
+						input = "<input data-tree='"+position+"' name='"+element.name+"' id='"+element.name+"-id"+"' type='number' placeholder='"+element.placeholder+"' step='0.01' class='' required/><br>";
+					else
+						input = "<input data-tree='"+position+"' name='"+element.name+"' id='"+element.name+"-id"+"' type='number' placeholder='"+element.placeholder+"'  class='' /><br>";
+					break;
+				case "datetime":
+					if(element.required)
+						input = "<input data-tree='"+position+"' name='"+element.name+"' id='"+element.name+"-id"+"' type='datetime' placeholder='"+element.placeholder+"'  class='' required/><br>";
+					else
+						input = "<input data-tree='"+position+"' name='"+element.name+"' id='"+element.name+"-id"+"' type='datetime' placeholder='"+element.placeholder+"'  class='' /><br>";
+					break;
+				case "short":
+					if(element.required)
+						input = "<input data-tree='"+position+"' name='"+element.name+"' id='"+element.name+"-id"+"' type='number' placeholder='"+element.placeholder+"' min='-32768' max='32767' class='' required/><br>";
+					else
+						input = "<input data-tree='"+position+"' name='"+element.name+"' id='"+element.name+"-id"+"' type='number' placeholder='"+element.placeholder+"' min='-32768' max='32767' class='' /><br>";
+					break;
+				case "byte":
+					if(element.required)
+						input = "<input data-tree='"+position+"' name='"+element.name+"' id='"+element.name+"-id"+"' type='number' placeholder='"+element.placeholder+"' min='-128' max='127' class='' required/><br>";
+					else
+						input = "<input data-tree='"+position+"' name='"+element.name+"' id='"+element.name+"-id"+"' type='number' placeholder='"+element.placeholder+"' min='-128' max='127' class='' /><br>";
+					break;
+				case "ushort":
+					if(element.required)
+						input = "<input data-tree='"+position+"' name='"+element.name+"' id='"+element.name+"-id"+"' type='number' placeholder='"+element.placeholder+"' min='0' max='32767' class='' required/><br>";
+					else
+						input = "<input data-tree='"+position+"' name='"+element.name+"' id='"+element.name+"-id"+"' type='number' placeholder='"+element.placeholder+"' min='0' max='32767' class='' /><br>";
+					break;
+				case "ubyte":
+					if(element.required)
+						input = "<input data-tree='"+position+"' name='"+element.name+"' id='"+element.name+"-id"+"' type='number' placeholder='"+element.placeholder+"' min='0' max='127' class='' required/><br>";
+					else
+						input = "<input data-tree='"+position+"' name='"+element.name+"' id='"+element.name+"-id"+"' type='number' placeholder='"+element.placeholder+"' min='0' max='127' class='' /><br>";
+					break;
+				case "uint":
+					if(element.required)
+						input = "<input data-tree='"+position+"' name='"+element.name+"' id='"+element.name+"-id"+"' type='number' placeholder='"+element.placeholder+"' min='0'  class='' required/><br>";
+					else
+						input = "<input data-tree='"+position+"' name='"+element.name+"' id='"+element.name+"-id"+"' type='number' placeholder='"+element.placeholder+"' min='0'  class='' /><br>";
+					break;
+				case "ulong":
+					if(element.required)
+						input = "<input data-tree='"+position+"' name='"+element.name+"' id='"+element.name+"-id"+"' type='number' placeholder='"+element.placeholder+"' min='0' class='' required/><br>";
+					else
+						input = "<input data-tree='"+position+"' name='"+element.name+"' id='"+element.name+"-id"+"' type='number' placeholder='"+element.placeholder+"' min='0'  class='' /><br>";
+					break;
+				case "udouble":
+					if(element.required)
+						input = "<input data-tree='"+position+"' name='"+element.name+"' id='"+element.name+"-id"+"' type='number' placeholder='"+element.placeholder+"' min='0' step='0.01' class='' required/><br>";
+					else
+						input = "<input data-tree='"+position+"' name='"+element.name+"' id='"+element.name+"-id"+"' type='number' placeholder='"+element.placeholder+"' min='0'  class='0.01' /><br>";
+					break;
+				case "boolean":
+					if(element.required)
+						input = "<input data-tree='"+position+"' name='"+element.name+"' id='"+element.name+"-id"+"' type='checkbox' placeholder='"+element.placeholder+"'  value='true' class='' required/><br>";
+					else
+						input = "<input data-tree='"+position+"' name='"+element.name+"' id='"+element.name+"-id"+"' type='checkbox' placeholder='"+element.placeholder+"'  value='true' class='' /><br>";
+					break;
+					
+				default:
+					if(element.required)
+						input = "<input data-tree='"+position+"' name='"+element.name+"' id='"+element.name+"-id"+"' type='number' placeholder='"+element.placeholder+"'  class='' required/><br>";
+					else
+						input = "<input data-tree='"+position+"' name='"+element.name+"' id='"+element.name+"-id"+"' type='number' placeholder='"+element.placeholder+"'  class='' /><br>";
+					break;					
+			}
+			
+			return input;
+		}
+		//Creates the form from given function
+		function parseAsInput(elements,objectName){
+			
+			if(elements){
+				
+				for(i in elements){
+					
+					if(elements[i].type=="servicetype"){
+						
+						parseAsInput(elements[i].fields,objectName+"-"+elements[i].name);					
+					}
+					else{
+						
+						form+=properInput(elements[i],objectName);
+					}	
+				}	
+			}		
+		}
+		
+		//Generate operations if they are not generated yet.
+		if(!Livo.ServiceObjects.{servicename}.isOperationsReady)
+			Livo.ServiceObjects.{servicename}.getOperations();
+		
+		
+		//Form elements from definition.
+		var elements ;
+		
+		Livo.ServiceObjects.{servicename}.operationDefinitions[functionName]? elements = Livo.ServiceObjects.{servicename}.operationDefinitions[functionName]: elements = null;
+		
+		//Change or modify DOM elements if you see any necessity.
+		parseAsInput(elements,"root");
+                
+                form+="<input type='submit' value='Submit' class='' /></form>";
+		
+		if(document.getElementById(elementId))
+			element = document.getElementById(elementId).innerHTML+=form;
+		else
+			console.error("No such an element is found with given id: %s",elementId);
+	}	
+};

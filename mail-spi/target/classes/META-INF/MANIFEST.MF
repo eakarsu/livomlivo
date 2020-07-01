@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Livo Server - Mail SPI
+Bundle-SymbolicName: tr.com.eno.livo.server.mail.spi
+Bundle-Version: 1.0.0
+Bundle-Vendor: ENO
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: org.osgi.framework;version="1.7.0",
+ org.slf4j;version="1.7.2"
+Export-Package: tr.com.eno.livo.server.mail;version="1.0.0"

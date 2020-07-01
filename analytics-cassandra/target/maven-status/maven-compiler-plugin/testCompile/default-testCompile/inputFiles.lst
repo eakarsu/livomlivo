@@ -1,0 +1,6 @@
+D:\Livo\livo-server\analytics-cassandra\src\test\java\tr\com\eno\livo\server\analytics\cassandra\task\PlatformDistributionReportTaskTest.java
+D:\Livo\livo-server\analytics-cassandra\src\test\java\tr\com\eno\livo\server\analytics\cassandra\task\ServiceObjectRequestCountReportTaskTest.java
+D:\Livo\livo-server\analytics-cassandra\src\test\java\tr\com\eno\livo\server\analytics\cassandra\task\UserActivityDurationReportTaskTest.java
+D:\Livo\livo-server\analytics-cassandra\src\test\java\tr\com\eno\livo\server\analytics\cassandra\task\ServiceObjectTotalOperationPayloadSizeReportTaskTest.java
+D:\Livo\livo-server\analytics-cassandra\src\test\java\tr\com\eno\livo\server\analytics\cassandra\CassandraHelperIT.java
+D:\Livo\livo-server\analytics-cassandra\src\test\java\tr\com\eno\livo\server\analytics\cassandra\task\ActiveUserCountReportTaskTest.java

@@ -1,0 +1,74 @@
+//Creation of sub-context for non necessary errors if needed.
+if(typeof Livo=="undefined")
+	Livo={};
+if(typeof Livo.ServiceObjects=="undefined")
+	Livo.ServiceObjects={};
+
+//Creation of the service.
+Livo.ServiceObjects.{servicename}={
+	
+	//Operations
+	operations: new Object(),
+	
+	//Operation definitions.
+	operationDefinitions:{definitions},
+	
+	isOperationsReady:false,
+	
+	serviceObject:{serviceObject},
+	
+	getOperations:function(){
+		
+		Livo.ServiceObjects.getServiceObject(Livo.ServiceObjects.{servicename}.serviceObject,{}, function(a){Livo.ServiceObjects.{servicename}.operations = a;  Livo.ServiceObjects.{servicename}.isOperationsReady = true;}, function(error){
+			console.log(error);
+		});
+	},
+	call:function(functionName,scall,ecall){
+		
+		var data = new Object();
+		var form = document.getElementById(functionName);
+		var inputs = form.getElementsByTagName("input");
+		for(i=0; i< form.length-1; i++)
+			data[inputs[i].name]=inputs[i].value;
+			
+		Livo.ServiceObjects.{servicename}.operations[functionName](data,scall,ecall);
+	},
+	
+	//HTML side can be modified if necessary for design or framework.
+	bind:function(elementId,functionName,successCallback,errorCallback){
+		
+		//Generate operations if they are not generated yet.
+		if(!Livo.ServiceObjects.{servicename}.isOperationsReady)
+			Livo.ServiceObjects.{servicename}.getOperations();
+		
+		//Form Holder.
+		var element;
+		
+		//Form Generation.
+		var elements ;
+		
+		var form ="<form id = '"+functionName+"'action='javascript:Livo.ServiceObjects.{servicename}.call(\""+functionName+"\","+successCallback+","+errorCallback+");'>";
+		
+		Livo.ServiceObjects.{servicename}.operationDefinitions[functionName]? elements = Livo.ServiceObjects.{servicename}.operationDefinitions[functionName]: elements = null;
+		
+		//Change or modify DOM elements if you see any necessity.
+		if(elements){
+			for(i in elements){
+				if(elements[i].required)
+					form+="<input name='"+elements[i].name+"' id='"+elements[i].name+"-id"+"' type='text' placeholder='"+elements[i].name+"' value='"+elements[i].value+"' class='' required/><br>";
+				else
+					form+="<input name='"+elements[i].name+"' id='"+elements[i].name+"-id"+"' type='text' placeholder='"+elements[i].name+"' value='"+elements[i].value+"' class=''/><br>";
+			}
+			
+                        //The button submits the form.
+			form+="<input type='submit' value='Submit' class='' /></form>";
+		}else 
+			console.error("No such a function is found with given name: %s",functionName);
+		
+		if(document.getElementById(elementId))
+			element = document.getElementById(elementId);
+		else
+			console.error("No such an element is found with given id: %s",elementId);
+		element.innerHTML += form;	
+	}	
+};

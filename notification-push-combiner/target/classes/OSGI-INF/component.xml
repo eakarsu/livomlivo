@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0"
+	name="tr.com.eno.livo.server.notification.combiner"
+	scr:xmlns="http://www.osgi.org/xmlns/scr/v1.1.0/scr">
+	<implementation
+		class="tr.com.eno.livo.server.notification.combiner.NotificationPushServiceCombiner" />
+	<property name="service.pid" type="String"
+		value="tr.com.eno.livo.server.notification.combiner.NotificationPushServiceCombiner" />
+	<property name="service.ranking" type="Integer" value="2147483646" />
+	<reference bind="registerService" cardinality="1..n"
+		interface="tr.com.eno.livo.server.notification.NotificationPushService"
+		name="NotificationPushService" policy="dynamic" unbind="unregisterService"
+		target="(!(service.pid=*Combiner))" />
+	<service>
+		<provide interface="tr.com.eno.livo.server.notification.NotificationPushService" />
+	</service>
+</scr:component>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0"
+	activate="start" deactivate="stop" modified="reconfigure" name="tr.com.eno.livo.server"
+	scr:xmlns="http://www.osgi.org/xmlns/scr/v1.1.0/scr">
+	<implementation class="tr.com.eno.livo.server.Server" />
+	<property name="thrift.port" type="Integer" value="2366" />
+	<reference bind="registerProcessor" cardinality="1..n"
+		interface="org.apache.thrift.TProcessor" name="TProcessor" policy="dynamic"
+		unbind="unregisterProcessor" />
+</scr:component>
+

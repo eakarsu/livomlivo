@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Livo Server - Application SPI
+Bundle-SymbolicName: tr.com.eno.livo.server.application
+Bundle-Version: 1.0.0
+Bundle-Vendor: ENO
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: org.osgi.framework,
+ org.slf4j;version="1.7.2",
+ tr.com.eno.livo.server.file;version="1.0.0",
+ tr.com.eno.livo.server.users;version="1.0.0"
+Export-Package: tr.com.eno.livo.server.application;version="1.0.0"

@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>App Name</title>
+    <link rel="stylesheet" href="css/jquery.mobile.min.css"/>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mobile.min.js"></script>
+    <style>
+        .ui-grid-a div  a {
+            height: 50px;
+        }
+
+        .ui-grid-a div  a center{
+            font-size: 12px;
+        }
+    </style>
+
+</head>
+
+<body class="ui-mobile-viewport ui-overlay-a">
+<div data-role="page" data-theme="a" class="ui-page ui-page-theme-a ui-page-active">
+    <div data-role="header" role="banner" class="ui-header ui-bar-inherit">
+        <h1 class="ui-title" role="heading">App Name</h1>
+    </div>
+    <!-- /header -->
+
+    <div role="main" class="ui-content" style="margin:10px; border: 2px solid #e6e6e6 !important;">
+
+        <div class="ui-grid-a">
+            <div class="ui-block-a">
+                <ul data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow" style="padding:2px;">
+                    <li data-icon="false" class="ui-first-child"><a href="#" id="button-home" class="ui-btn ui-icon-home   ui-btn-icon-top ui-corner-all ui-btn-a"><p></p><center><br> Home</center><p></p></a>
+                    </li>
+                    <li data-icon="false"><a href="#" id="button-camera" class="ui-btn ui-icon-camera   ui-btn-icon-top ui-corner-all ui-btn-a"><p></p><center><br> Camera</center><p></p></a>
+                    </li>
+                    <li data-icon="false" class="ui-last-child"><a href="#" id="button-location" class="ui-btn ui-icon-location   ui-btn-icon-top ui-corner-all ui-btn-a"><p></p><center><br> Location</center><p></p></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="ui-block-b">
+                <ul data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow" style="padding:2px;">
+                    <li data-icon="false" class="ui-first-child"><a href="#" id="button-user" class="ui-btn ui-icon-user   ui-btn-icon-top ui-corner-all ui-btn-a"><p></p><center><br>User</center><p></p></a>
+                    </li>
+                    <li data-icon="false"><a href="#" id="button-video" class="ui-btn ui-icon-video   ui-btn-icon-top ui-corner-all ui-btn-a"><p></p><center class="blue"><br> Video</center><p></p></a>
+                    </li>
+                    <li data-icon="false" class="ui-last-child"><a href="#" id="button-gear" class="ui-btn ui-icon-gear   ui-btn-icon-top ui-corner-all ui-btn-a"><p></p><center class="blue"><br> Settings</center><p></p></a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div><!-- /ui-content -->
+</div>
+
+<div class="ui-loader ui-corner-all ui-body-a ui-loader-default"><span class="ui-icon-loading"></span><h1>loading</h1></div>
+    </body>
+</html>

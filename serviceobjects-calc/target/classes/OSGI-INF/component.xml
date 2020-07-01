@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0"
+	name="tr.com.eno.livo.server.serviceobjects.calculator.CalculatorServiceObjectProxyService"
+	scr:xmlns="http://www.osgi.org/xmlns/scr/v1.1.0/scr" immediate="true">
+	<implementation
+		class="tr.com.eno.livo.server.serviceobjects.calculator.CalculatorServiceObjectProxyService" />
+	<property name="service.pid" type="String"
+		value="tr.com.eno.livo.server.serviceobjects.calculator.CalculatorServiceObjectProxyService" />
+	<service>
+		<provide
+			interface="tr.com.eno.livo.server.serviceobjects.ServiceObjectProxyService" />
+	</service>
+</scr:component>
+

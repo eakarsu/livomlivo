@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Livo Server - Analytics SPI
+Bundle-SymbolicName: tr.com.eno.livo.server.analytics
+Bundle-Version: 1.0.0
+Bundle-Vendor: ENO
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: org.osgi.framework;version="1.7.0",
+ org.osgi.service.event;version="1.3",
+ org.slf4j;version="1.7.2",
+ tr.com.eno.livo.server.authc;version="1.0.0",
+ tr.com.eno.livo.server.analytics;version="1.0.0"
+Export-Package: tr.com.eno.livo.server.analytics;version="1.0.0",
+ tr.com.eno.livo.server.analytics.report;version="1.0.0"
+Service-Component: OSGI-INF/*.xml

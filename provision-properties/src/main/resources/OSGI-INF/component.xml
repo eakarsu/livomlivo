@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0"
+	activate="start" deactivate="stop" modified="reconfigure"
+	name="tr.com.eno.livo.server.provision.properties" singleton="true"
+	scr:xmlns="http://www.osgi.org/xmlns/scr/v1.1.0/scr">
+	<implementation
+		class="tr.com.eno.livo.server.provision.properties.PropertiesProvisioningService" />
+	<property name="service.pid" type="String"
+		value="tr.com.eno.livo.server.provision.properties.PropertiesProvisioningService" />
+	<service>
+		<provide interface="tr.com.eno.livo.server.provision.ProvisioningService" />
+	</service>
+</scr:component>
+

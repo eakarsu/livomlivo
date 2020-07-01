@@ -1,0 +1,8 @@
+tr\com\eno\livo\server\serviceobjects\ServiceObjectNotFoundException.class
+tr\com\eno\livo\server\serviceobjects\SimpleServiceObject.class
+tr\com\eno\livo\server\serviceobjects\ServiceObjectOperationFailedException.class
+tr\com\eno\livo\server\serviceobjects\ServiceObjectConfigurationException.class
+tr\com\eno\livo\server\serviceobjects\ServiceObject.class
+tr\com\eno\livo\server\serviceobjects\ServiceObjectBaseException.class
+tr\com\eno\livo\server\serviceobjects\ServiceObjectProxyService.class
+tr\com\eno\livo\server\serviceobjects\ServiceObjectOperationPayload.class

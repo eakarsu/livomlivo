@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0"
+               name="tr.com.eno.livo.server.thrift.processor.notification" 
+               scr:xmlns="http://www.osgi.org/xmlns/scr/v1.1.0/scr">
+    <implementation
+        class="tr.com.eno.livo.server.thrift.processor.notification.NotificationRegistrationServiceProcessor" />
+    <property name="service.pid" type="String"
+              value="tr.com.eno.livo.server.thrift.processor.notification.NotificationRegistrationServiceProcessor" />
+    <property name="thrift.service" type="String" value="NotificationRegistrationService" />
+    
+    <reference bind="registerService" cardinality="1..n"
+               interface="tr.com.eno.livo.server.notification.NotificationRegistrationService"
+               name="NotificationRegistrationService" policy="dynamic" unbind="unregisterService" />
+    
+<!--    <reference bind="registerMetrics" cardinality="1..1"
+               interface="com.codahale.metrics.MetricRegistry" name="MetricRegistry"
+               policy="static" unbind="unregisterMetrics" />-->
+    <service>
+        <provide interface="org.apache.thrift.TProcessor" />
+    </service>
+</scr:component>

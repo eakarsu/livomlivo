@@ -1,0 +1,1214 @@
+/* YUI 3.9.1 (build 5852) Copyright 2013 Yahoo! Inc. http://yuilibrary.com/license/ */
+/*! Copyright (c) Nicolas Gallagher and Jonathan Neal *//*! normalize.css v1.1.0 | MIT License | git.io/normalize */article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,video{display:inline-block;*display:inline;*zoom:1}audio:not([controls]){display:none;height:0}[hidden]{display:none}html{font-size:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}html,button,input,select,textarea{font-family:sans-serif}body{margin:0}a:focus{outline:thin dotted}a:active,a:hover{outline:0}h1{font-size:2em;margin:.67em 0}h2{font-size:1.5em;margin:.83em 0}h3{font-size:1.17em;margin:1em 0}h4{font-size:1em;margin:1.33em 0}h5{font-size:.83em;margin:1.67em 0}h6{font-size:.67em;margin:2.33em 0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}blockquote{margin:1em 40px}dfn{font-style:italic}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}mark{background:#ff0;color:#000}p,pre{margin:1em 0}code,kbd,pre,samp{font-family:monospace,serif;_font-family:'courier new',monospace;font-size:1em}pre{white-space:pre;white-space:pre-wrap;word-wrap:break-word}q{quotes:none}q:before,q:after{content:'';content:none}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}dl,menu,ol,ul{margin:1em 0}dd{margin:0 0 0 40px}menu,ol,ul{padding:0 0 0 40px}nav ul,nav ol{list-style:none;list-style-image:none}img{border:0;-ms-interpolation-mode:bicubic}svg:not(:root){overflow:hidden}figure{margin:0}form{margin:0}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0;white-space:normal;*margin-left:-7px}button,input,select,textarea{font-size:100%;margin:0;vertical-align:baseline;*vertical-align:middle}button,input{line-height:normal}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer;*overflow:visible}button[disabled],html input[disabled]{cursor:default}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0;*height:13px;*width:13px}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}#yui3-css-stamp.cssnormalize{display:none}
+/*
+YUI 3.7.2 (build 5639)
+Copyright 2012 Yahoo! Inc. All rights reserved.
+Licensed under the BSD License.
+http://yuilibrary.com/license/
+*/
+/**
+ * Percents could work for IE, but for backCompat purposes, we are using keywords.
+ * x-small is for IE6/7 quirks mode.
+ */
+body {
+	font:13px/1.231 arial,helvetica,clean,sans-serif;
+	*font-size:small; /* for IE */
+	*font:x-small; /* for IE in quirks mode */
+}
+/**
+ * Nudge down to get to 13px equivalent for these form elements
+ */ 
+select,
+input,
+button,
+textarea {
+	font:99% arial,helvetica,clean,sans-serif;
+}
+/**
+ * To help tables remember to inherit
+ */
+table {
+	font-size:inherit;
+	font:100%;
+}
+/**
+ * Bump up IE to get to 13px equivalent for these fixed-width elements
+ */
+pre,
+code,
+kbd,
+samp,
+tt {
+	font-family:monospace;
+	*font-size:108%;
+	line-height:100%;
+}
+/* YUI CSS Detection Stamp */
+#yui3-css-stamp.cssfonts { display: none; }
+h1, h2 {
+    font-weight: normal;
+}
+table {
+    margin: 0;
+}
+th, td {
+    border: 0;
+	 text-align: left;
+}
+hr {
+	border: 0;
+	height: 1px;
+	color: #CCC3D1;
+	background-color: #CCC3D1;
+}
+.right {
+	text-align: right;
+}
+ul {
+	margin: 0;
+    padding: 0;
+}
+/* This fixes some error messages with the HTML tags pre, p and h5*/
+pre {
+    line-height: 120%;
+}
+pre p,
+pre h5{
+	margin: 0;
+    font-size: 1em;
+}
+a:link,
+a:visited,
+a:hover {
+	/*color: #0000CD;*/
+	color: #3684bd;
+}
+a:hover {
+    color: #0d62a0;
+}
+a.disabled:link,
+a.disabled:visited,
+a.disabled:hover {
+	color: #d2d2d2;
+}
+a.no-underline:link,
+a.no-underline:visited,
+a.no-underline:hover {
+	text-decoration: none;
+}
+/*
+	active page link (used to reload a page, link style only upon hover)
+*/
+a.active-page:link,
+a.active-page:visited,
+a.active-page:hover {
+	color: black;
+	text-decoration: none;
+	font-weight: bold;
+}
+a.active-page:hover {
+	color: #0000CD;
+	text-decoration: underline;
+	cursor: pointer;
+}
+/* Standard command links with 16x16 px images */
+a.link-50:link,
+a.link-50:visited,
+a.link-50:hover {
+	text-decoration: none;
+}
+a.link-50:link img,
+a.link-50:visited img,
+a.link-50:hover img {
+	vertical-align: middle;
+	text-decoration: none;
+	margin-bottom: 1px; /* Fixes vertical alignment*/
+	margin-right: 2px;
+}
+a.link-50:link span,
+a.link-50:visited span,
+a.link-50:hover span {
+	text-decoration: underline;
+}
+a.white:link,
+a.white:visited,
+a.white:hover {
+	color: white;
+}
+div.clearance {
+	clear: both;
+	font-size: 1px;
+	line-height: 1px;
+}
+#noscript {
+	display: none;
+	font-size: 1.4em;
+	padding: 4em;
+}
+/* input placeholder */
+.placeholder {
+    color: #8e8e8e;
+	font-style: italic;
+}
+/*
+	product-bar (main header bar on top of page)
+*/
+div.product-bar-bg { /* This div includes the nav bar! */
+	/*background-color: #d2dbe5;*/
+    background-color: #c6d5e3;
+	/* image is defined within template */
+	/* background-image: url(../picts/product_bar_gradient.png); -- Defined in css_style_map.cfg -- */
+	/*background-position: top left;*/
+	/*background-repeat: repeat-x;*/
+	/*border-bottom: 1px solid #d2dbe5;*/
+}
+table.product-bar {
+	width: 100%;
+}
+table.product-bar th,
+table.product-bar td {
+	padding: 0;
+	text-align: left;
+}
+table.product-bar td.product-bar-right {
+	padding: 5px;
+	text-align: right;
+	/*vertical-align: top;*/
+	color: #C6C6C6;
+}
+table.product-bar img.logo {
+	vertical-align: middle;
+}
+a.logo:link,
+a.logo:visited,
+a.logo:hover {
+	text-decoration: none;
+}
+table.product-bar span.version {
+	padding-right: 14px;
+	color: #6498cd;
+}
+td.product-bar-right a:link,
+td.product-bar-right a:visited,
+td.product-bar-right a:hover {
+	color: #0002BD;
+	text-decoration: underline;
+	padding: 2px 5px;
+}
+td.product-bar-right a:hover {
+	background-color: #FAF9F3;
+}
+span.trial-info {
+	color: #4a5867;
+}
+button.days-left,
+button.days-left-low,
+button.days-left-very-low {
+	margin: 0 11px;
+	font-size: 13px;
+	padding: 3px 5px;
+	border: none;
+	text-decoration: none;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+    cursor: none;
+}
+button.days-left {
+	color: #353f4a;
+	background-color: white;
+	opacity: 0.45;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=45)"; /* first! */
+	filter: alpha(opacity=45);					/* second */
+}
+button.days-left-low {
+	color: white;
+	background-color: #f98c08;
+}
+button.days-left-very-low {
+	color: white;
+	background-color: #f80909;
+}
+div.product-bar-about {
+	position: absolute;
+	right: 0;
+	top: 27px;
+	background-color: white;
+	border: 1px solid #cbcbcb;
+	padding: 7px 10px;
+	display: none;
+}
+div.product-bar-about span {
+   color: #8a8a8a;
+   display: block;
+   padding: 2px 0;
+}
+div.product-bar-about p { /*copyright text*/
+	font-size: 0.94em;
+}
+/*
+	rc-nav-bar Reports/Config navbar
+*/
+table.rc-nav-bar {
+    width: 100%;
+    margin-top: 22px;
+    background-color: #e8e9e9;
+}
+table.rc-nav-bar th,
+table.rc-nav-bar td {
+    padding: 7px 0;
+    text-align: left;
+    font-weight: normal;
+    color: #4c4c4c;
+    white-space: nowrap;
+}
+table.rc-nav-bar th.profile-label {
+    padding-left: 5px;
+    /*font-weight: bold;*/
+}
+table.rc-nav-bar th.page-label {
+    padding: 0 14px;
+    /*color: #de8b05;*/
+    color: #cf7b24;
+    /*font-weight: bold;*/
+}
+table.rc-nav-bar td {
+    text-align: right;
+}
+table.rc-nav-bar td.expander {
+    width: 90%;
+}
+table.rc-nav-bar-config th,
+table.rc-nav-bar-config td {
+    border-style: solid;
+    border-color: #cccccc;
+    border-width: 0 0 1px 0;
+}
+table.rc-nav-bar-config th.page-label {
+    /*border-style: solid;*/
+    /*border-color: #d5d7d7;*/
+    border-width: 0 1px 0 1px;
+}
+table.rc-nav-bar a:link,
+table.rc-nav-bar a:visited,
+table.rc-nav-bar a:hover {
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #4c4c4c;
+}
+table.rc-nav-bar a:hover,
+table.rc-nav-bar a.active:link,
+table.rc-nav-bar a.active:visited,
+table.rc-nav-bar a.active:hover {
+    background-color: #d3d3d3;
+}
+table.rc-nav-bar a.page-label:link,
+table.rc-nav-bar a.page-label:visited,
+table.rc-nav-bar a.page-label:hover {
+    background-color: transparent;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #cf7b24;
+}
+table.rc-nav-bar a.page-label:hover {
+    text-decoration: underline;
+}
+/*
+	toolbar-10 with btn-10
+*/
+div.toolbar-10  {
+	margin: 0;
+	background-color: #e8e9e9;
+	/*border-top: 1px solid #dee1e6;*/
+	border-bottom: 1px solid #dee1e6;
+}
+table.toolbar-10 {
+	width: 100%;
+}
+table.toolbar-10 td {
+	padding: 0;
+	background-color: transparent;
+	vertical-align: middle;
+	text-align: left;
+	white-space: nowrap;
+}
+table.toolbar-10 td.spacer {
+	/* A spacer/expander cell between the left and right toolbar buttons */
+	width: 95%;
+}
+table.toolbar-10 img {
+	vertical-align: middle;
+	margin: 0 3px 1px 0;
+}
+a.btn-10:link,
+a.btn-10:visited,
+a.btn-10:hover,
+a.btn-10-disabled:link,
+a.btn-10-disabled:visited,
+a.btn-10-disabled:hover,
+span.btn-10 {
+	color: #4c4c4c;
+	text-decoration: none;
+	display: block;
+	cursor: default;
+	padding: 2px 9px;
+	margin: 4px 0;
+	border: 1px solid transparent;
+	/* IE transparent border fix - credits to Hedger Wow */
+	/* Set a height, otherwise the border fix has no effect*/
+	_height: 1em;
+	/*set an unused color to be index color*/
+	_border-color:tomato;
+	/*then remove this indexed color*/
+	_filter:chroma(color=tomato);
+}
+span.btn-10 { /* toolbar spacer on left */
+	padding: 2px 0px;
+}
+a.btn-10:hover {
+	border: 1px solid;
+	border-left-color: White;
+	border-top-color: White;
+	border-right-color: #D8D8D8;
+	border-bottom-color: #D8D8D8;
+}
+a.btn-10-disabled:link,
+a.btn-10-disabled:visited,
+a.btn-10-disabled:hover {
+	color: #CACACA;
+}
+/*
+	copyright
+*/
+/*
+	config home NEW (now also used in Reports view!)
+*/
+/* iframe is used in IE6 only */
+div.config-nav,
+iframe.config-nav {
+	width: 100%;
+	background-color: white;
+	padding: 0;
+	margin: 0;
+}
+/* div extends div.config-nav, iframe is used in IE6 only */
+div.hidden-nav, 
+iframe.hidden-nav { 
+	position: absolute;
+	left: 0;
+	display: none;
+	border-bottom: 1px solid #d2dbe5;
+	height: 235px;
+	z-index: 3000;
+}
+iframe.hidden-nav { /* activated in IE6 only */
+	border: none;
+	z-index: 2999;
+}
+div.config-nav a:link,
+div.config-nav a:visited,
+div.config-nav a:hover {
+	text-decoration: none;
+	display: block;
+	padding: 0.4em 16px 0.3em 16px;
+}
+div.config-nav a:hover {
+	background-color: #efefef;
+}
+div.config-nav ul {
+	float: left;
+	padding: 4px 0;
+	margin: 0;
+	border-right: 1px solid #eaeaea;
+	height: 122px;
+	list-style: none;
+}
+p.copyright {
+	margin: 16px 24px;
+	font-size: 0.9em;
+	color: #656565;
+}
+/*
+	panel-50 (required in base.css because panel-50 is used in error reporting)
+*/
+table.panel-50-left-right-grid td {
+	/* Used if buttons are on top right side */
+	padding: 0;
+	vertical-align: top;
+	text-align: left;
+}
+table.panel-50-left-right-grid td.buttons-box {
+	/* Used if buttons are on top right side */
+	text-align: center;
+	padding: 18px 18px;
+}
+div.panel-50 {
+	/*border: solid 1px Red;*/
+	position: absolute;
+	display: none;
+	z-index: 20;
+}
+div.panel-50-header {
+	background-color: transparent;
+	/*	background-image: url(../picts/panel/panel_50_top_left.gif); -- Defined in css_style_map.cfg -- */
+	background-position: top left;
+	background-repeat: no-repeat;
+}
+div.panel-50-header-frame {
+	/*border: 1px solid Red;*/
+	text-align: right;
+	margin-left: 10px;
+	padding: 5px 0 3px 0;
+	/*	background-image: url(../picts/panel/panel_50_top_right.gif);  -- Defined in css_style_map.cfg -- */
+	background-position: top right;
+	background-repeat: no-repeat;
+	vertical-align: bottom;
+}
+div.panel-50-header-frame img {
+	margin-right: 5px;
+}
+div.panel-50-header-title {
+	/*font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;*/
+	font-size: 1.2em;
+	line-height: 1em;
+	font-weight: normal;
+	text-align: left;
+	color: White;
+	background-color: transparent;
+	float: left;
+}
+div.panel-50-header-bottom {
+	background-color: #f3f2eb;
+	font-size: 1px;
+	/*height: 1px;* Don't specify the height because IE would expand the width to 100% */
+	line-height: 1px;
+	border-width: 0 3px;
+	border-color: #59609b;
+	border-style: solid;
+}
+div.panel-50-body { /* Note, the body has 0px margin so that we can add tab-lines, etc.! */
+	background-color: #f3f2eb;
+	border-width: 0 2px;
+	border-color: #59609b;
+	border-style: solid;
+}
+div.panel-50-form,
+div.panel-50-form-center,
+div.panel-50-form-right {
+	padding: 10px 14px;
+}
+div.panel-50-form-center {
+	text-align: center;
+}
+div.panel-50-form-right {
+	text-align: right;
+}
+div.panel-50-form th,
+div.panel-50-form td {
+	/*Note, we give minimal top padding, this is useful for example fields above a row*/
+	padding: 3px 4px 6px 4px;
+	vertical-align: baseline; /* We use baseline so that we are aligned when displaying error indication divs */
+	border: none;
+}
+div.panel-50-form th {
+	text-align: right;
+	font-weight: normal;
+}
+div.panel-50-form th.field-sample,
+div.panel-50-form td.field-sample {
+	padding-bottom: 0;
+	/*font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;*/
+	font-size: 0.9em;
+	color: #646464;
+}
+div.panel-50-footer {
+	background-color: transparent;
+	/*	background-image: url(../picts/panel/panel_50_bottom_left.gif); -- Defined in css_style_map.cfg -- */
+	background-position: bottom left;
+	background-repeat: no-repeat;
+}
+div.panel-50-footer-offset {
+	background-color: transparent;
+	margin-left: 10px;
+	font-size: 5px;
+	line-height: 5px;
+	/*	background-image: url(../picts/panel/panel_50_bottom_right.gif); -- Defined in css_style_map.cfg -- */
+	background-position: bottom right;
+	background-repeat: no-repeat;
+}
+div.panel-50-separator-line {
+	padding: 0;
+	margin: 0;
+	border-top: 1px solid #c8c7c7;
+	background-color: White;
+	font-size: 1px;
+	line-height: 1px;
+	/* height: 1px; Don't apply height or IE will expand to maximum width! */
+}
+/*
+	forms.css
+	This style sheet is similar to base, it is used in all dynamic
+	pages which contain form elements
+*/
+select {
+	font-size: 1.0em;
+}
+h3.action-info {
+	margin: 21px;
+	color: #969696;
+}
+select.small {
+	padding: 0;
+	margin: 0;
+}
+/*
+	form-cover
+*/
+div.form-cover {
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 0;
+	/*background-image: url(../picts/transparent_white.gif); -- Defined in css_style_map.cfg -- */
+	background-repeat: repeat;
+	opacity: .6;
+	filter: alpha(opacity=60);
+	z-index: 10;
+	display: none;
+}
+iframe.form-cover {
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	top: 0;
+	left: 0;
+	width: 40px;
+	height: 40px;
+	border: none;
+	background-color: white;
+	/*z-index: 10; z-index IS SET BY JAVASCRIPT! */
+	display: none;
+}
+/*
+	form error and warning indication
+*/
+div.form-error,
+div.form-info,
+div.form-warning,
+div.form-tip {
+	margin-top: 2px;
+	margin-bottom: 4px;
+	background-color: White;
+	border: 1px dotted #FF0033;
+	/*border-top-color: White;*/
+	color: Red;
+	padding: 3px 7px;
+	white-space: normal;
+	display: none;
+	line-height: 1.4em;
+}
+div.form-info {
+	 border-color: #b2b2f0;
+    color: #030303;
+	 background-color: #ffffcc;
+	 display: block;
+}
+div.form-warning {
+    border-color: #b2b2f0;
+    color: #030303;
+	 padding-left: 25px;
+	/* background-image: url(../picts/form_warning.gif); Defined in HTML */
+	background-position: top left;
+	background-repeat: no-repeat;
+	background-color: #ffffcc;
+}
+div.form-tip {
+    margin-top: 36px;
+    border-color: #7a7aa4;
+    color: #030303;
+    background-color: white;
+    display: block;
+}
+div.form-tip h4 {
+	margin: 2px 0 0 0;
+    color: #0566ac;
+}
+div.form-tip p {
+    padding: 0.2em 0 0.8em 0;
+}
+/*
+ 	background server call error
+*/
+div.background-server-call-alert {
+	padding: 20px;
+	border: 2px solid Red;
+	background-color: White;
+	position: absolute;
+	top: 60px;
+	left: 60px;
+	z-index: 2000;
+}
+div.background-server-call-alert a:link,
+div.background-server-call-alert a:visited,
+div.background-server-call-alert a:hover {
+	font-weight: bold;
+	text-decoration: underline;
+}
+/*
+	drop-down-10
+*/
+div.drop-down-10-box,
+ul.drop-down-10 {
+	border: 1px solid #cccccc;
+	background-color: White;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	display: none;
+	z-index: 5;
+}
+ul.drop-down-10-inline { /* Use when ul is contained in div */
+    border: none;
+    position: static;
+    display: block;
+}
+div.drop-down-10-fixed-box {
+    /*Used for profiles drop down*/
+    height: 250px;
+    overflow: auto;
+}
+ul.drop-down-10 li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+    white-space: nowrap;
+}
+ul.drop-down-10 li.group {
+    border-bottom: 1px solid #dfdfdf;
+}
+ul.drop-down-10 a:link,
+ul.drop-down-10 a:visited,
+ul.drop-down-10 a:hover {
+	color: #333333;
+	text-decoration: none;
+	padding: 7px 24px 7px 20px;
+	display: block;
+}
+/*a.drop-down-10-bottom:link,*/
+/*a.drop-down-10-bottom:visited,*/
+/*a.drop-down-10-bottom:hover {*/
+    /*text-decoration: none;*/
+    /*padding: 7px 24px 7px 20px;*/
+	/*display: block;*/
+    /*border-top: 1px solid #dfdfdf;*/
+/*}*/
+ul.drop-down-10 a:hover {
+	background-color: #eeeeee;
+}
+ul.drop-down-10 a.disabled:link,
+ul.drop-down-10 a.disabled:visited,
+ul.drop-down-10 a.disabled:hover {
+	color: #D4D4D4;
+	cursor: default;
+	background-color: White;
+}
+/* horizontal arrow right */
+.drop-down-10-has-items:after {
+    content: '\25B8';
+    float: right;
+    /* These specific fonts have the Unicode char we need. */
+    font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'DejaVu Sans', sans-serif;
+    margin-right: -20px;
+    margin-top: -1px;
+}
+ul.drop-down-10-small li {
+    font-size: 13px;
+}
+ul.drop-down-10-small a:link,
+ul.drop-down-10-small a:visited,
+ul.drop-down-10-small a:hover {
+	padding: 6px 24px 6px 20px;
+}
+/*
+ 	links and command links
+	Used for command links with images or without images.
+*/
+a.command-link-50 {
+	padding: 0 5px;
+}
+a.command-link-50-disabled:link,
+a.command-link-50-disabled:visited,
+a.command-link-50-disabled:hover {
+	padding: 0 5px;
+	color: #D4D4D4;
+	background-color: transparent;
+	cursor: default;
+}
+/*
+ 	buttons
+*/
+/*
+	btn-50 button (Generic OK and Cancel button with fixed width)
+*/
+button.btn-50 {
+    width: 90px;
+	padding: 2px 4px;
+	margin: 0 7px;
+}
+/*
+	btn-20 (report toolbar buttons with images)
+*/
+a.btn-20:link,
+a.btn-20:visited,
+a.btn-20:hover,
+a.btn-20-disabled:link,
+a.btn-20-disabled:visited,
+a.btn-20-disabled:hover {
+	padding: 6px 10px;
+	border-right: 1px solid #EAEAEA;
+	display: block;
+	float: left;
+	text-decoration: none;
+	color: Black;
+}
+a.btn-20-disabled:link,
+a.btn-20-disabled:visited,
+a.btn-20-disabled:hover {
+	/*padding: 0 5px;*/
+	color: #D4D4D4;
+	/*background-color: transparent;*/
+	cursor: default;
+}
+a.btn-20:hover {
+	background-color: #F7F7EF;
+}
+/*
+	btn-30 (unpressed/pressed buttons, i.e. Start Date, etc. in date picker)
+*/
+a.btn-30:link,
+a.btn-30:visited,
+a.btn-30:hover,
+a.btn-30-pressed:link,
+a.btn-30-pressed:visited,
+a.btn-30-pressed:hover {
+	padding: 6px 10px;
+	margin-right: 7px;
+	display: block;
+	float: left;
+	text-decoration: none;
+	color: Black;
+	border: 1px solid #f3f2eb;
+}
+a.btn-30-pressed:link,
+a.btn-30-pressed:visited,
+a.btn-30-pressed:hover {
+	border: 1px solid White;
+	border-left-color: #c8c7b8;
+	border-top-color: #c8c7b8;
+	cursor: default;
+}
+a.btn-30:hover {
+	background-color: #F7F7EF;
+}
+/*
+	btn-60 button (Reports customize, export and row buttons)
+*/
+.btn-60 {
+    color: #949494;
+    padding: 2px 11px;
+    border-style: solid;
+    border-color: #e2e2e2;
+    border-width: 1px;
+    background-color: white;
+    -moz-box-shadow:    inset 0 0 2px #ffffff;
+    -webkit-box-shadow: inset 0 0 2px #ffffff;
+    box-shadow:         inset 0 0 3px #ffffff;
+}
+/* white border and narrow */
+.btn-60-wban {
+    border-color: white;
+    padding: 2px 6px;
+}
+.btn-60 img {
+    vertical-align: bottom;
+}
+.btn-60:hover,
+.btn-60:focus {
+   border-color: #78baf8;
+   -moz-box-shadow:    inset 0 0 2px #78baf8;
+   -webkit-box-shadow: inset 0 0 2px #78baf8;
+   box-shadow:         inset 0 0 2px #78baf8;
+}
+.btn-60[disabled],
+.btn-60-disabled,
+.btn-60-disabled:hover,
+.btn-60-disabled:focus,
+.btn-60-disabled:active {
+    /*border: none;*/
+    border-color: #bcbcbc;
+    background-image: none;
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+    filter: alpha(opacity=40);
+    -khtml-opacity: 0.40;
+    -moz-opacity: 0.40;
+    opacity: 0.40;
+    cursor: default;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+/*
+	Warning messages (i.e. Scheduler if no SMTP server)
+*/
+div.info-20 {
+	position: absolute;
+	top: 60px;
+	right: 24px;
+	width: 300px;
+	padding: 7px;
+	background-color: White;
+	border: 3px solid #88a7ce;
+	display: none;
+}
+/*
+	Email address control (Used in scheduler and reports)
+*/
+div.email-address-grid {
+	/*width: 440px; is defined by javascript*/
+	height: 60px;
+	overflow: auto;
+	background-color: White;
+	border: 1px solid #555555;
+}
+table.email-address-grid th,
+table.email-address-grid td {
+	border-bottom: 1px solid #b1ccf8;
+	padding: 1px 0;
+	/*background-color: yellow;*/
+}
+table.email-address-grid th.last,
+table.email-address-grid td.last {
+	border-bottom: none;
+}
+table.email-address-grid th {
+	text-align: left;
+	width: 2%;
+}
+table.email-address-grid td {
+	width: 98%;
+}
+table.email-address-grid select {
+	margin-right: 4px;
+	font-size: 0.8em;
+	border-width: 0;
+	border-color: white;
+}
+table.email-address-grid input {
+	width: 98%;
+	margin-left: 4px;
+	border-width: 0;
+	border-color: White;
+	/*background-color: yellow;*/
+}
+/*
+	Search/Filter box
+*/
+table.filter-box td {
+	padding: 0;
+	border: 1px solid #bbbbbb;
+	color: #8e8e8e;
+	vertical-align: middle;
+    background-color: white;
+}
+table.filter-box td.search {
+	border-right-style: none;
+}
+table.filter-box td.clear-btn {
+	border-left-style: none;
+	width: 30px;
+	height: 24px;
+	text-align: right;
+}
+table.filter-box td.number {
+	border-style: none;
+	padding-left: 5px;
+}
+table.filter-box input {
+	border: 1px solid transparent;
+	outline: none;
+	margin:0;
+}
+/* Removes IE10+ clear icon */
+table.filter-box ::-ms-clear {
+    display: none;
+}
+table.filter-box a {
+	font: 26px/22px Arial, sans serif;
+	padding: 0 5px;
+	color: #a1b9ed;
+}
+table.filter-box a:hover {
+	color: #3467d8;
+}
+/*
+	panel and form elements used in admin, config and reports
+*/
+/*
+	info-panel-10
+*/
+div.info-panel-10 {
+	background-color: #ffffcc;
+	border: 1px solid #b2b2f0;
+	padding: 0;
+	display: none;
+	position: absolute;
+}
+div.info-panel-10 p {
+	padding: 2px 7px;
+}
+/*
+	panel-20 (Used in Zoom Info and util.BusyPanel, generated by javascript only)
+*/
+div.panel-20 {
+	position: absolute;
+	top: 60px;
+	left: 30px;
+    background-color: #f1f2f8;
+    /*-moz-box-shadow:    0px 3px 5px 0px #ccc;*/
+    /*-webkit-box-shadow: 0px 3px 5px 0px #ccc;*/
+    /*box-shadow:         0px 3px 5px 0px #ccc;*/
+}
+/*
+	panel-30 (Used i.e. for info blurb in New Profile Wizard)
+*/
+div.panel-30 {
+	position: absolute;
+	display: none;
+	z-index: 20;
+}
+div.panel-30-header,
+div.panel-30-header-frame {
+	background-color: #979bb7;
+}
+div.panel-30-header {
+	/*font-size: 1px;*/
+	/*background-color: transparent;*/
+}
+div.panel-30-header-title {
+	/*font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;*/
+	font-size: 1.2em;
+	line-height: 1em;
+	font-weight: bold;
+	text-align: left;
+	color: White;
+	background-color: transparent;
+	float: left;
+}
+div.panel-30-header-frame {
+	/*border: 1px solid Red;*/
+	text-align: right;
+	margin-left: 10px;
+	padding: 5px 0 3px 0;
+	background-position: top right;
+	background-repeat: no-repeat;
+	vertical-align: bottom;
+}
+div.panel-30-header-frame img {
+	margin-right: 5px;
+}
+div.panel-30-header-top {
+	text-align: right;
+	margin-left: 10px;
+	padding: 0;
+	font-size: 1px;
+	vertical-align: bottom;
+}
+div.panel-30-header-bottom {
+	background-color: #f1f2f8;
+	font-size: 1px;
+	line-height: 1px;
+	border-width: 0 3px;
+	border-color: #c3c6d5;
+	border-style: solid;
+}
+div.panel-30-body { 
+	background-color: White;
+	border-width: 0 1px 1px 1px;
+	border-color: #c3c6d5;
+	border-style: solid;
+	padding: 0px;
+}
+div.panel-30-body ul {
+	margin: 0 0 5px 18px;
+	padding: 0;
+}
+/*
+	panel-50 has been moved to base.css because it is used for error reporting!
+*/
+/*
+	panel-60 (very simple panel with close button, its used i.e. for custom row numbers)
+*/
+div.panel-60 {
+    display: none;
+    border: 1px solid #c3c6d5;
+    background-color: white;
+    padding: 0;
+    position: absolute;
+}
+div.panel-60-header {
+    text-align: right;
+    padding: 0 0 3px 0;
+}
+/* Panel close btn*/
+div.panel-60-header a:link,
+div.panel-60-header a:visited,
+div.panel-60-header a:hover {
+    color: #c7c7c7;
+    font-size: 1.2em;
+    /*line-height: 1.0em;*/
+    text-decoration: none;
+    /*background-color: greenyellow;*/
+    padding: 0 6px;
+}
+div.panel-60-header a:hover {
+     color: #9f9f9f;
+}
+div.panel-60-body {
+    padding: 0 9px 14px 9px;
+}
+/*
+	tab-50 (Horizontal tabs)
+*/
+div.tab-50 {
+	margin: 0;
+	padding: 0;
+	padding-top: 10px;
+	/*background-image: url(../picts/panel/tab_50_bottom_line.gif); -- Defined in css_style_map.cfg -- */
+	background-position: bottom left;
+	background-repeat: repeat-x;
+}
+div.tab-50 th,
+div.tab-50 td {
+	padding: 0;
+	background-color: transparent;
+	vertical-align: bottom;
+}
+div.tab-50 th {  /* th contains the ul tabs */
+	text-align: left;
+	font-weight: normal;
+}
+div.tab-50 td { /* td is used for right elements in a tab bar!*/
+	text-align: right;
+	padding-bottom: 4px;
+	padding-right: 12px;
+}
+ul.tab-50 {
+	margin: 0;
+	padding: 0;
+	margin-top: 2px; /*This margin actually handles the bottom distance of any right box button!*/
+	padding-left: 7px;
+	float: left;
+}
+ul.tab-50 li {
+	margin: 0;
+	padding: 0;
+	white-space: nowrap;
+	list-style: none;
+	float: left;
+	background-color: transparent;
+	margin: 0 2px;
+	/*background-image: url(../picts/panel/tab_50_left.gif); -- Defined in css_style_map.cfg -- */
+	background-position: top left;
+	background-repeat: no-repeat;
+}
+ul.tab-50 a {
+	text-decoration: none;
+	display: block;
+	float: left; /* Under certain circumstances IE6 requires the anchor to float as well!*/
+	line-height: 1em;
+	margin-left: 3px;
+	padding-top: 6px;
+	padding-bottom: 5px;
+	padding-left: 9px;
+	padding-right: 12px; /*Compensates margin-left*/
+	background-color: transparent;
+	cursor: default;
+	/*background-image: url(../picts/panel/tab_50_right.gif); -- Defined in css_style_map.cfg -- */
+	background-position: top right;
+	background-repeat: no-repeat;
+}
+ul.tab-50 li.active {
+	margin-top: 1px;
+	/*background-image: url(../picts/panel/tab_50_active_left.gif); -- Defined in css_style_map.cfg -- */
+	background-position: top left;
+	background-repeat: no-repeat;
+}
+ul.tab-50 a.active {
+	/*background-image: url(../picts/panel/tab_50_active_right.gif); -- Defined in css_style_map.cfg -- */
+	background-position: top right;
+	background-repeat: no-repeat;
+}
+ul.tab-50 li.hover {
+	/*background-image: url(../picts/panel/tab_50_hover_left.gif); -- Defined in css_style_map.cfg -- */
+	background-position: top left;
+	background-repeat: no-repeat;
+}
+ul.tab-50 a.hover {
+	/*background-image: url(../picts/panel/tab_50_hover_right.gif); -- Defined in css_style_map.cfg -- */
+	background-position: top right;
+	background-repeat: no-repeat;
+}
+ul.tab-50 a:link,
+ul.tab-50 a:visited,
+ul.tab-50 a:hover {
+	color: Black;
+	text-decoration: none;
+}
+/*
+	tab-50-v (Vertical tabs in panel 50)
+*/
+div.tab-50-v {
+	margin: 0;
+	padding: 0;
+	background-color: #f6f6f1;
+}
+ul.tab-50-v {
+	margin: 0;
+	padding: 0;
+}
+ul.tab-50-v li {
+	margin: 0;
+	padding: 0;
+	white-space: nowrap;
+	list-style: none;
+	background-color: transparent;
+	margin: 0 2px;
+}
+ul.tab-50-v a {
+	text-decoration: none;
+	display: block;
+	/*line-height: 1em;*/
+	height: 1.1em; /*forces IE Layout Mode! */
+	cursor: default;
+	background-color: transparent;
+	padding: 5px 9px;
+}
+ul.tab-50-v li.active {
+	background-color: #e8e9f2;
+}
+ul.tab-50-v a.active {
+	font-weight: bold;
+}
+ul.tab-50-v li.hover {
+}
+ul.tab-50-v a.hover {
+}
+ul.tab-50-v a:link,
+ul.tab-50-v a:visited,
+ul.tab-50-v a:hover {
+	color: Black;
+	text-decoration: none;
+}

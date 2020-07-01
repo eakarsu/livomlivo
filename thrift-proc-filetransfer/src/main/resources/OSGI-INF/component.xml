@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0"
+	name="tr.com.eno.livo.server.thrift.processor.file" scr:xmlns="http://www.osgi.org/xmlns/scr/v1.1.0/scr">
+	<implementation
+		class="tr.com.eno.livo.server.thrift.processor.file.FileTransferServiceProcessor" />
+	<property name="service.pid" type="String"
+		value="tr.com.eno.livo.server.thrift.processor.file.FileTransferServiceProcessor" />
+	<property name="thrift.service" type="String" value="FileTransferService" />
+	<reference bind="registerService" cardinality="1..n"
+		interface="tr.com.eno.livo.server.file.FileTransferService" name="FileTransferService"
+		policy="dynamic" unbind="unregisterService" />
+	<service>
+		<provide interface="org.apache.thrift.TProcessor" />
+	</service>
+</scr:component>

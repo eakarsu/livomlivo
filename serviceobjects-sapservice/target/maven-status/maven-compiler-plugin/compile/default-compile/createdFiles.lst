@@ -1,0 +1,5 @@
+tr\com\eno\livo\server\serviceobjects\sapservice\SapServiceObject.class
+tr\com\eno\livo\server\serviceobjects\sapservice\SapFunctionAnalizer.class
+tr\com\eno\livo\server\serviceobjects\sapservice\SapDestinationTimerTask.class
+tr\com\eno\livo\server\serviceobjects\sapservice\SapDestinationDataProvider.class
+tr\com\eno\livo\server\serviceobjects\sapservice\SapServiceObjectProxyService.class

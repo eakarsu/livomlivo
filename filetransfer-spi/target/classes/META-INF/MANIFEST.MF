@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Livo Server - File Transfer SPI
+Bundle-SymbolicName: tr.com.eno.livo.server.file
+Bundle-Version: 1.0.0
+Bundle-Vendor: ENO
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: tr.com.eno.livo.server.file;version="1.0.0"

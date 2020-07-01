@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Livo Server - Properties-File Based Provisioning Service
+Bundle-SymbolicName: tr.com.eno.livo.server.provision.properties
+Bundle-Version: 1.0.0
+Bundle-Vendor: ENO
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: org.osgi.service.event,
+ org.apache.commons.codec.binary;version="1.4.0",
+ org.slf4j;version="1.7.2",
+ tr.com.eno.livo.server.application;version="1.0.0",
+ tr.com.eno.livo.server.authc;version="1.0.0",
+ tr.com.eno.livo.server.file;version="1.0.0",
+ tr.com.eno.livo.server.provision;version="1.0.0",
+ tr.com.eno.livo.server.aspect;version="1.0.0",
+ org.aspectj.lang;version="1.8.5",
+ org.aspectj.runtime.internal;version="1.8.5",
+ org.aspectj.runtime.reflect;version="1.8.5"
+Service-Component: OSGI-INF/*.xml

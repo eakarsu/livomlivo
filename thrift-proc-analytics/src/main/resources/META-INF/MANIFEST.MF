@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Livo Server - Thrift Processor for Analytics Services
+Bundle-SymbolicName: tr.com.eno.livo.server.thrift.processor.analytics
+Bundle-Version: 1.0.0
+Bundle-Vendor: ENO
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: org.apache.thrift;version="0.9.1",
+ org.osgi.framework;version="1.7.0",
+ org.osgi.service.event,
+ org.slf4j;version="1.7.2",
+ tr.com.eno.livo.server.authc;version="1.0.0",
+ tr.com.eno.livo.server.analytics;version="1.0.0",
+ tr.com.eno.livo.thrift.analytics;version="1.0.0",
+ tr.com.eno.livo.thrift.authc;version="1.0.0",
+ tr.com.eno.livo.thrift.shared;version="1.0.0"
+Service-Component: OSGI-INF/*.xml

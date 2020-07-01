@@ -1,0 +1,251 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    <title>Nightly - A Bold jQuery Mobile Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <!-- jQueryMobileCSS - styling-->
+    <link rel="stylesheet" href="css/jqeury.mobile.theme.min.css" />
+
+    <!-- jQueryMobile icons -->
+    <link rel="stylesheet" href="css/jquery.mobile.icons.min.css" />
+
+    <!-- jQueryMobile core CSS -->
+    <link rel="stylesheet" href="css/jquery.mobile.min.css" />
+
+    <!-- Owl stylesheet -->
+    <link rel="stylesheet" href="css/owl.carousel.css"/>
+
+    <!-- Owl Theme -->
+    <link rel="stylesheet" href="css/owl.theme.css"/>
+
+    <!-- NIGHTLY style -->
+    <link rel="stylesheet" href="css/nightly.css" />
+
+    <!-- Load Font Awesome Icons -->
+    <!-- 		<link rel="stylesheet" href="css/font-awesome.min.css"> -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.min.js"></script>
+
+    <!-- jQueryMobile -->
+    <script src="js/jquery.mobile.min.js"></script>
+
+    <!-- Owl Carousel -->
+    <script src="js/owl.carousel.min.js"></script>
+
+    <!-- NIGHTLY JS -->
+    <script src="js/nightly.js"></script>
+
+</head>
+<body>
+
+<div data-role="page" data-theme='a'>
+
+    <div data-role="panel" data-display="push" id="sidebar" data-theme="a">
+        <ul data-role="listview">
+    		<li data-icon='false' class="menu-item"><a
+                    href="about.html">ABOUT</a>
+            </li>
+            <li data-icon='false' class="menu-item-has-children"><a
+                    href="#">SERVICES</a>
+                <ul data-role="listview" class="sub-menu">
+                    <li data-icon='false'><a data-ajax="false" href="index.html">Service
+                            A</a></li>
+                    <li data-icon='false'><a data-ajax="false" href="index.html">Service
+                            B</a></li>
+                </ul></li>
+
+            <li data-icon='false' class="menu-item-has-children"><a
+                    href="#">PRODUCTS</a>
+                <ul data-role="listview" class="sub-menu">
+                    <li data-icon='false'><a href="index.html" data-ajax="false">Product
+                            1</a></li>
+                    <li data-icon='false'><a href="index.html" data-ajax="false">Product
+                            2</a></li>
+                </ul></li>
+
+            <li data-icon='false' class="menu-item-has-children"><a
+                    href="#">REFERENCES</a>
+                <ul data-role="listview" class="sub-menu">
+                    <li data-icon='false'><a href="index.html" data-ajax="false">Reference
+                            1</a></li>
+                    <li data-icon='false'><a href="index.html" data-ajax="false">Reference
+                            2</a></li>
+                    <li data-icon='false'><a href="index.html" data-ajax="false">Reference
+                            3</a></li>
+                </ul></li>
+
+            <li data-icon='false' class="menu-item-has-children"><a
+                    href="#">CONTACT</a>
+                <ul data-role="listview" class="sub-menu">
+                    <li data-icon='false'><a data-ajax="false" href="index.html">Contact</a></li>
+                </ul></li>
+
+        </ul>
+    </div>
+
+    <form id="searchform" data-theme="a">
+        <input data-role="none" class="nightly-input" type="text" name="s"
+               placeholder="Enter your text" /> <input data-role="none"
+               class="nightly-button" type="submit" name="submit" value="" />
+    </form>
+
+    <div data-role="header" data-tap-toggle="false" data-theme='a'>
+        <a href='#sidebar' data-role="none"><img
+                src="images/menu-icon.png" alt="sidebar"
+                id="header-menu-icon" /></a>
+        <h1 class="header-title">ACME</h1>
+        <a href='#' data-role="none" id="a-search"><img
+                src="images/search-icon.png" alt="search"
+                id="header-search-icon" /></a>
+    </div>
+
+    <div data-role="content">
+        <div data-role="none" id="main-slider" class="owl-carousel">
+
+            <div class="item">
+                <img src="img/corporate.jpg" alt="Grab">
+                    <div class="text">
+                        <h1>Welcome</h1>
+                        <h2>Let's go explore Nightly, shall we?</h2>
+                        <a data-ajax="false" href="#"><button
+                                data-role="none" class="nightly-button">Check Features</button></a>
+                    </div>
+            </div>
+            <div class="item">
+                <img src="img/mobile.jpg" alt="Responsive">
+                    <div class="text">
+                        <h1>New Trend</h1>
+                        <h2>Explore whole new level of mobile developing</h2>
+                        <a href="#"><button data-role="none"
+                                            class="nightly-button">Get started</button></a>
+                    </div>
+            </div>
+
+            <div class="item">
+                <img src="img/corporate.jpg" alt="CSS3">
+                    <div class="text">
+                        <h1>jQuery Mobile</h1>
+                        <h2>Updated, redesigned and powerful as ever!</h2>
+                        <a data-ajax="false" href="#"><button
+                                data-role="none" class="nightly-button">Markup Examples</button></a>
+                    </div>
+            </div>
+
+
+        </div>
+
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut lobortis ex sit amet nibh sodales feugiat. 
+        </p>
+
+        <div data-role="footer" data-theme="none" data-border="false">
+            <p data-inset="true">
+                ACME 2015. All rights reserved.
+            </p>
+        </div>
+
+    </div>
+
+
+</div>
+
+
+<script type="text/javascript">
+
+    $(document).ready(function ($) {
+
+        var time = 8; // time in seconds
+
+        var $progressBar,
+                $bar,
+                $elem,
+                isPause,
+                tick,
+                percentTime;
+
+
+        $("#main-slider").owlCarousel({
+            slideSpeed: 700,
+            paginationSpeed: 700,
+            rewindSpeed: 1500,
+            singleItem: true,
+            pagination: false,
+            lazyLoad: true,
+            autoPlay: 10000,
+            stopOnHover: true,
+            navigation: false,
+            navigationText: [
+                "<i class='owl-nav-left fa fa-angle-left'></i>",
+                "<i class='owl-nav-right fa fa-angle-right'></i>"
+            ],
+            afterInit: progressBar,
+            afterMove: moved,
+            startDragging: pauseOnDragging
+        });
+
+
+        function progressBar(elem) {
+            $elem = elem;
+            buildProgressBar();
+            start();
+        }
+
+
+        function buildProgressBar() {
+            $progressBar = $("<div>", {
+                id: "progressBar"
+            });
+            $bar = $("<div>", {
+                id: "bar"
+            });
+            $progressBar.append($bar).prependTo($elem);
+        }
+
+        function start() {
+
+            percentTime = 0;
+            isPause = false;
+
+            tick = setInterval(interval, 10);
+        }
+        ;
+
+        function interval() {
+            if (isPause === false) {
+                percentTime += 1 / time;
+                $bar.css({
+                    width: percentTime + "%"
+                });
+
+                if (percentTime >= 100) {
+
+                    $elem.trigger('owl.next')
+                }
+            }
+        }
+
+        function pauseOnDragging() {
+            isPause = true;
+        }
+
+        function moved() {
+
+            clearTimeout(tick);
+            start();
+        }
+
+
+        $elem.on('mouseover', function () {
+            isPause = true;
+        })
+        $elem.on('mouseout', function () {
+            isPause = false;
+        })
+    })(jQuery);
+
+</script>
+
+</body>
+</html>

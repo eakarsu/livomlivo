@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metatype:MetaData xmlns:metainfo="http://www.osgi.org/xmlns/metatype/v1.0.0">
+    <OCD description="Executes report calculation tasks periodically and updates the report objects in the Cassandra database." 
+         name="Cassandra Analytics Service - Report Task Executor"
+         id="tr.com.eno.livo.server.analytics.cassandra.task.executor">
+        <AD name="Calculation Interval" 
+            id="calculation.interval"
+            required="true"
+            type="Long"
+            default="600"
+            description="Report task calculation interval in seconds">
+        </AD>
+    </OCD>
+</metatype:MetaData>

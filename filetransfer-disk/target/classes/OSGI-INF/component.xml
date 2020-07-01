@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0"
+	activate="start" deactivate="stop" modified="reconfigure"
+	name="tr.com.eno.livo.server.file.disk" singleton="true"
+	scr:xmlns="http://www.osgi.org/xmlns/scr/v1.1.0/scr">
+	<implementation
+		class="tr.com.eno.livo.server.file.disk.DiskFileTransferService" />
+	<property name="service.pid" type="String">tr.com.eno.livo.server.file.disk.FileTransferService</property>
+	<property name="file.storage" type="String" value="D:\\" />
+	<service>
+		<provide interface="tr.com.eno.livo.server.file.FileTransferService" />
+	</service>
+</scr:component>
+

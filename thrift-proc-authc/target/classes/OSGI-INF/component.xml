@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0"
+               name="tr.com.eno.livo.server.thrift.processor.authc" scr:xmlns="http://www.osgi.org/xmlns/scr/v1.1.0/scr">
+    <implementation
+        class="tr.com.eno.livo.server.thrift.processor.authc.AuthenticationServiceProcessor" />
+    <property name="service.pid" type="String"
+                  value="tr.com.eno.livo.server.thrift.processor.authc.AuthenticationServiceProcessor" />
+    <property name="thrift.service" type="String" value="AuthenticationService" />
+    <reference bind="registerService" cardinality="1..n"
+                   interface="tr.com.eno.livo.server.authc.CompanyAuthenticationService"
+                   name="CompanyAuthenticationService" policy="dynamic" unbind="unregisterService" />
+    <reference bind="registerService" cardinality="1..n"
+                   interface="tr.com.eno.livo.server.authc.UserAuthenticationService"
+                   name="UserAuthenticationService" policy="dynamic" unbind="unregisterService" />
+    <reference bind="registerService" cardinality="1..n"
+                   interface="tr.com.eno.livo.server.authc.DeviceAuthenticationService"
+                   name="DeviceAuthenticationService" policy="dynamic" unbind="unregisterService" />
+    <reference bind="registerService" cardinality="1..1"
+                   interface="org.osgi.service.event.EventAdmin" name="EventAdmin"
+                   policy="static" unbind="unregisterService" />
+    <reference bind="registerMetrics" cardinality="1..1"
+               interface="com.codahale.metrics.MetricRegistry" name="MetricRegistry"
+               policy="static" unbind="unregisterMetrics" />
+    <service>
+        <provide interface="org.apache.thrift.TProcessor" />
+    </service>
+</scr:component>
+

@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Livo Server - Provisioning SPI
+Bundle-SymbolicName: tr.com.eno.livo.server.provision.spi
+Bundle-Version: 1.0.0
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-Vendor: ENO
+Import-Package: tr.com.eno.livo.server.application;version="1.0.0",
+ tr.com.eno.livo.server.authc;version="1.0.0",
+ tr.com.eno.livo.server.file;version="1.0.0"
+Export-Package: tr.com.eno.livo.server.provision;version="1.0.0"

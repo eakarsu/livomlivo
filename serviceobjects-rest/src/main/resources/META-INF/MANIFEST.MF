@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Livo Server - REST ServiceObjects
+Bundle-SymbolicName: tr.com.eno.livo.server.serviceobjects.rest
+Bundle-Version: 1.0.0
+Bundle-Vendor: ENO
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: tr.com.eno.livo.server.serviceobjects;version="1.0.0",
+    javax.net,
+    javax.net.ssl,
+    javax.naming,
+    tr.com.eno.livo.server.authc;version="1.0.0",
+    tr.com.eno.livo.server.aspect;version="1.0.0",
+    org.aspectj.lang;version="1.8.5",
+    org.aspectj.runtime.internal;version="1.8.5",
+    org.aspectj.runtime.reflect;version="1.8.5",
+    org.slf4j;version="1.7.2",
+    javax.xml.bind
+Service-Component: OSGI-INF/*.xml

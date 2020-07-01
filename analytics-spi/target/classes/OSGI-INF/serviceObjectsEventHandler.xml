@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0"
+	name="tr.com.eno.livo.server.analytics.event.AnalyticsServiceObjectsEventHandler"
+	singleton="true" scr:xmlns="http://www.osgi.org/xmlns/scr/v1.1.0/scr"
+	immediate="true">
+	<implementation
+		class="tr.com.eno.livo.server.analytics.event.AnalyticsServiceObjectsEventHandler" />
+	<property name="service.pid" type="String"
+		value="tr.com.eno.livo.server.analytics.event.AnalyticsServiceObjectsEventHandler" />
+	<property name="event.topics">
+		tr/com/eno/livo/server/serviceobjects/requestReceived
+		tr/com/eno/livo/server/serviceobjects/operationPerformed
+	</property>
+	<reference bind="registerAnalyticsReceiverService"
+		cardinality="1..1"
+		interface="tr.com.eno.livo.server.analytics.AnalyticsReceiverService"
+		name="AnalyticsReceiverService" policy="dynamic"
+		unbind="unregisterAnalyticsReceiverService" />
+	<service>
+		<provide interface="org.osgi.service.event.EventHandler" />
+	</service>
+</scr:component>
+

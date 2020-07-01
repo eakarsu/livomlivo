@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0"
+	activate="start" deactivate="stop" modified="reconfigure"
+	name="tr.com.eno.livo.server.provision.properties.applicationEventHandler"
+	singleton="true" scr:xmlns="http://www.osgi.org/xmlns/scr/v1.1.0/scr"
+	immediate="true">
+	<implementation
+		class="tr.com.eno.livo.server.provision.properties.PropertiesProvisioningApplicationEventHandler" />
+	<property name="service.pid" type="String"
+		value="tr.com.eno.livo.server.provision.properties.PropertiesProvisioningApplicationEventHandler" />
+	<property name="event.topics">
+		tr/com/eno/livo/server/application/deployed
+		tr/com/eno/livo/server/application/saved
+	</property>
+	<service>
+		<provide interface="org.osgi.service.event.EventHandler" />
+	</service>
+</scr:component>
+

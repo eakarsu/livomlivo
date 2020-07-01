@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metatype:MetaData xmlns:metainfo="http://www.osgi.org/xmlns/metatype/v1.0.0">
+    <metatype:OCD description="Creates ServiceObject instances exposing functionalities of configured web services." 
+                  name="Web Service ServiceObjects - Component Factory"
+                  id="tr.com.eno.livo.server.serviceobjects.ws">
+        <AD name="Web Service Name" 
+            id="ws.name"
+            required="true"
+            type="String"
+            description="Name of the web service">
+        </AD>
+        <AD name="WSDL URL" 
+            id="ws.descriptionUrl"
+            required="true"
+            type="String"
+            description="URL for the WSDL the backing web service">
+        </AD>
+    </metatype:OCD>
+    <metatype:Designate pid="tr.com.eno.livo.server.serviceobjects.ws"
+                        factoryPid="tr.com.eno.livo.server.serviceobjects.ws">
+        <metatype:Object ocdref="tr.com.eno.livo.server.serviceobjects.ws"/>
+    </metatype:Designate>
+</metatype:MetaData>

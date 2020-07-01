@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <configuration scan="true">
+
+        <appender name="MAIN_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+
+            <file>${AEON_HOME}/log/main.log</file>
+
+            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                <fileNamePattern>main.%d{yyyy-MM-dd}</fileNamePattern>
+                <maxHistory>30</maxHistory>
+            </rollingPolicy>
+
+            <encoder>
+                <pattern>%date{yyyy-MM-dd HH:mm:ss,SS} %level %logger %msg%n</pattern>
+            </encoder>
+        </appender>
+
+        <appender name="CASSANDRA_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+
+            <file>${AEON_HOME}/log/cassandra.log</file>
+
+            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                <fileNamePattern>main.%d{yyyy-MM-dd}</fileNamePattern>
+                <maxHistory>30</maxHistory>
+            </rollingPolicy>
+
+            <encoder>
+                <pattern>%date{yyyy-MM-dd HH:mm:ss,SS} %level %logger %msg%n</pattern>
+            </encoder>
+        </appender>
+
+        <appender name="METRICS_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+
+            <file>${AEON_HOME}/log/metrics.log</file>
+
+            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                <fileNamePattern>main.%d{yyyy-MM-dd}</fileNamePattern>
+                <maxHistory>30</maxHistory>
+            </rollingPolicy>
+
+            <encoder>
+                <pattern>%date{yyyy-MM-dd HH:mm:ss,SS} %level %logger %msg%n</pattern>
+            </encoder>
+        </appender>
+
+        <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+
+            <encoder>
+                <pattern>%date{yyyy-MM-dd HH:mm:ss,SS} %level %logger %msg%n</pattern>
+            </encoder>
+        </appender>
+
+        <logger name="org.apache.cassandra" level="INFO" additivity="false">
+            <appender-ref ref="CASSANDRA_FILE" />
+        </logger>
+
+        <logger name="io.netty" level="INFO" additivity="false">
+            <appender-ref ref="CASSANDRA_FILE" />
+        </logger>
+
+        <logger name="com.datastax.driver" level="INFO" additivity="false">
+            <appender-ref ref="CONSOLE" />
+            <appender-ref ref="MAIN_FILE" />
+        </logger>
+
+        <logger name="com.livomobile.server.metrics" level="DEBUG" additivity="false">
+            <appender-ref ref="METRICS_FILE" />
+        </logger>
+
+        <logger name="tr.com.eno.livo.server.analytics.cassandra.task" level="INFO" additivity="false">
+            <appender-ref ref="MAIN_FILE" />
+        </logger>
+
+        <root level="debug">
+            <appender-ref ref="CONSOLE" />
+            <appender-ref ref="MAIN_FILE" />
+        </root>
+
+    </configuration>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0"
+	name="tr.com.eno.livo.server.thrift.processor.analytics" scr:xmlns="http://www.osgi.org/xmlns/scr/v1.1.0/scr">
+	<implementation
+		class="tr.com.eno.livo.server.thrift.processor.analytics.AnalyticsServiceProcessor" />
+	<property name="service.pid" type="String"
+		value="tr.com.eno.livo.server.thrift.processor.analytics.AnalyticsServiceProcessor" />
+	<property name="thrift.service" type="String" value="AnalyticsService" />
+	<reference bind="registerAnalyticsReceiverService"
+		cardinality="1..n"
+		interface="tr.com.eno.livo.server.analytics.AnalyticsReceiverService"
+		name="AnalyticsReciverService" policy="static"
+		unbind="unregisterAnalyticsReceiverService" />
+	<service>
+		<provide interface="org.apache.thrift.TProcessor" />
+	</service>
+</scr:component>

@@ -1,0 +1,6 @@
+tr\com\eno\livo\server\authz\policy\AuthorizationPolicy.class
+tr\com\eno\livo\server\authz\policy\FineGrainedAuthorizationPolicy.class
+tr\com\eno\livo\server\authz\AuthorizationQueryService.class
+tr\com\eno\livo\server\authz\AuthorizationManagementService.class
+tr\com\eno\livo\server\authz\policy\DenyAllAuthorizationPolicy.class
+tr\com\eno\livo\server\authz\policy\AllowAllAuthorizationPolicy.class

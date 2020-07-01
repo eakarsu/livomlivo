@@ -1,0 +1,82 @@
+<!DOCTYPE html> 
+<html> 
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0">  
+    <title>emdot</title> 
+
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png"/>
+
+
+    <!-- scripts -->
+    <script src="assets/js/jquery-1.6.4.min.js"></script>
+    <script src="assets/js/jquery.mobile-1.0.min.js"></script>
+
+    <!-- css / theme -->
+    <link rel="stylesheet" href="assets/css/1.css"/><!-- change the number of the css file to switch themes -->
+    <link rel="stylesheet" href="assets/css/style.css"/>
+
+    <!-- add to homepage bubble on iphone, ipad  -->
+    <script type="text/javascript">
+        if ('standalone' in navigator && !navigator.standalone && (/iphone|ipod|ipad/gi).test(navigator.platform) && (/Safari/i).test(navigator.appVersion)) {
+            document.write('<link rel="stylesheet" href="assets\/add-bubble\/style\/add2home.css">');
+            document.write('<script type="application\/javascript" src="assets\/add-bubble\/src\/add2home.js" charset="utf-8"><\/s' + 'cript>');
+        }
+    </script>
+    <!-- /add to homepage bubble on iphone, ipad  -->
+</head> 
+
+<body><div data-role="page">
+
+    <!-- header -->
+    <div data-role="header" class="page-header home-page-header">
+        <h1>ACME</h1>
+    </div>
+    <!--/header -->
+
+    <div data-role="content">	
+
+        <div class="logo"></div><!-- change the background image of this div to change your logo -->
+
+        <!-- navigation -->
+        <ul data-role="listview" data-inset="true" id="listview" class="shadowBox">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">References</a></li>
+        </ul>
+        <img src="assets/images/shadow2.png" class="shadow" alt="shadow">
+            <!-- /navigation -->
+
+            <!-- social icons --> 
+            <p class="social">
+                Stay Connected!<br />
+
+                <a href="https://www.facebook.com/livomobile"><img src="assets/images/social-icons/facebook.png" alt="Facebook"></a>
+                <a href="https://twitter.com/livomobile"><img src="assets/images/social-icons/twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="assets/images/social-icons/flickr.png" alt="Flickr"></a>
+                <a href="#"><img src="assets/images/social-icons/linkedin.png" alt="Linked In"></a>
+                <a href="#"><img src="assets/images/social-icons/digg.png" alt="Digg"></a>
+                <a href="#"><img src="assets/images/social-icons/google.png" alt="Google"></a>
+                <a href="#"><img src="assets/images/social-icons/delicious.png" alt="delicious">   </a>         
+            </p>
+            <!-- /social icons -->
+    </div><!-- /content -->
+    <!-- footer -->
+    <div data-role="footer">
+        <div data-role="navbar" class="custom-icons" data-grid="c"  data-position="fixed">
+            <ul>
+                <li><a href="#" id="map-marker" data-icon="custom">Directions</a></li>
+                <li><a href="#" id="mail" data-icon="custom">Contact</a></li>
+                <li><a href="#" id="camera" data-icon="custom">Portfolio</a></li>
+                <li><a href="#" id="star" data-icon="custom">Icons!</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- /footer -->
+
+</div><!-- /page -->
+
+</body>
+</html>

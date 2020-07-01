@@ -1,0 +1,10 @@
+tr\com\eno\livo\serviceobjects\rest\description\Header.class
+tr\com\eno\livo\serviceobjects\rest\RESTServiceObjectProxyService$2.class
+tr\com\eno\livo\serviceobjects\rest\description\HttpMethod.class
+tr\com\eno\livo\serviceobjects\rest\description\Operation.class
+tr\com\eno\livo\serviceobjects\rest\RESTServiceObjectProxyService$1.class
+tr\com\eno\livo\serviceobjects\rest\RESTServiceObjectProxyService.class
+tr\com\eno\livo\serviceobjects\rest\description\ParameterType.class
+tr\com\eno\livo\serviceobjects\rest\description\Parameter.class
+tr\com\eno\livo\serviceobjects\rest\description\Authentication.class
+tr\com\eno\livo\serviceobjects\rest\description\ServiceDescription.class

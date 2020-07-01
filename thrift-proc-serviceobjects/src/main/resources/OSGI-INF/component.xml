@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0"
+	name="tr.com.eno.livo.server.thrift.processor.serviceobjects"
+	scr:xmlns="http://www.osgi.org/xmlns/scr/v1.1.0/scr">
+	<implementation
+		class="tr.com.eno.livo.server.thrift.processor.serviceobjects.ServiceObjectProxyServiceProcessor" />
+	<property name="service.pid" type="String"
+		value="tr.com.eno.livo.server.thrift.processor.serviceobjects.ServiceObjectProxyServiceProcessor" />
+	<property name="thrift.service" type="String"
+		value="ServiceObjectProxyService" />
+	<reference bind="registerService" cardinality="1..n"
+		interface="tr.com.eno.livo.server.serviceobjects.ServiceObjectProxyService"
+		name="ServiceObjectProxyService" policy="dynamic" unbind="unregisterService" />
+	<reference bind="registerService" cardinality="1..1"
+		interface="org.osgi.service.event.EventAdmin" name="EventAdmin"
+		policy="static" unbind="unregisterService" />
+	<service>
+		<provide interface="org.apache.thrift.TProcessor" />
+	</service>
+</scr:component>
+

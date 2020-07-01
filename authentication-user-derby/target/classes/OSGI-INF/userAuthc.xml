@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0"
+	name="tr.com.eno.livo.server.authc.derby.DerbyUserAuthenticationService"
+	scr:xmlns="http://www.osgi.org/xmlns/scr/v1.1.0/scr">
+	<implementation
+		class="tr.com.eno.livo.server.authc.derby.DerbyUserAuthenticationService" />
+	<property name="service.pid" type="String"
+		value="tr.com.eno.livo.server.authc.derby.DerbyUserAuthenticationService" />
+	<service>
+		<provide interface="tr.com.eno.livo.server.authc.UserAuthenticationService" />
+	</service>
+</scr:component>

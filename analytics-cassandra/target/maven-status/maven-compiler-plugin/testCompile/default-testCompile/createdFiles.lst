@@ -1,0 +1,10 @@
+tr\com\eno\livo\server\analytics\cassandra\task\ServiceObjectRequestCountReportTaskTest.class
+tr\com\eno\livo\server\analytics\cassandra\task\ServiceObjectTotalOperationPayloadSizeReportTaskTest.class
+tr\com\eno\livo\server\analytics\cassandra\task\PlatformDistributionReportTaskTest.class
+tr\com\eno\livo\server\analytics\cassandra\CassandraHelperIT.class
+tr\com\eno\livo\server\analytics\cassandra\task\ActiveUserCountReportTaskTest$1.class
+tr\com\eno\livo\server\analytics\cassandra\task\ActiveUserCountReportTaskTest$3.class
+tr\com\eno\livo\server\analytics\cassandra\task\ActiveUserCountReportTaskTest.class
+tr\com\eno\livo\server\analytics\cassandra\task\UserActivityDurationReportTaskTest.class
+tr\com\eno\livo\server\analytics\cassandra\task\ActiveUserCountReportTaskTest$4.class
+tr\com\eno\livo\server\analytics\cassandra\task\ActiveUserCountReportTaskTest$2.class

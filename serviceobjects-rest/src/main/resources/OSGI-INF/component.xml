@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0"
+               name="tr.com.eno.livo.server.serviceobjects.rest" scr:xmlns="http://www.osgi.org/xmlns/scr/v1.1.0/scr"
+               activate="start"
+               deactivate="stop"
+               configuration-policy="require">
+    <implementation
+        class="tr.com.eno.livo.serviceobjects.rest.RESTServiceObjectProxyService" />
+    <property name="service.pid" type="String"
+              value="tr.com.eno.livo.serviceobjects.rest.RESTServiceObjectProxyService" />
+    <service>
+        <provide
+            interface="tr.com.eno.livo.server.serviceobjects.ServiceObjectProxyService" />
+    </service>
+</scr:component>

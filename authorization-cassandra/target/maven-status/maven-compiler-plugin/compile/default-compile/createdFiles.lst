@@ -1,0 +1,5 @@
+tr\com\eno\livo\server\authz\cassandra\CassandraAuthorizationManagementService.class
+tr\com\eno\livo\server\authz\cassandra\CassandraAuthorizationQueryService$1.class
+tr\com\eno\livo\server\authz\cassandra\CassandraAuthorizationManagementService$1.class
+tr\com\eno\livo\server\authz\cassandra\CassandraAuthorizationQueryService.class
+tr\com\eno\livo\server\authz\cassandra\CassandraHelper.class

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0"
+	name="tr.com.eno.livo.server.notification.registration.CassandraNotificationRegistrationService"
+	scr:xmlns="http://www.osgi.org/xmlns/scr/v1.1.0/scr" activate="start"
+	deactivate="stop" immediate="true">
+	<implementation
+		class="tr.com.eno.livo.server.notification.registration.CassandraNotificationRegistrationService" />
+	<property name="service.pid" type="String"
+		value="tr.com.eno.livo.server.notification.registration.CassandraNotificationRegistrationService" />
+	<service>
+		<provide interface="tr.com.eno.livo.server.notification.NotificationRegistrationService" />
+	</service>
+</scr:component>
+
+

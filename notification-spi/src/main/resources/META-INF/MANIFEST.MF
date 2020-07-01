@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Livo Server - Notification SPI
+Bundle-SymbolicName: tr.com.eno.livo.server.notification
+Bundle-Version: 1.0.0
+Bundle-Vendor: ENO
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: org.osgi.framework,
+ tr.com.eno.livo.server.authc;version="1.0.0",
+ org.slf4j;version="1.7.2"
+Export-Package: tr.com.eno.livo.server.notification;version="1.0.0"

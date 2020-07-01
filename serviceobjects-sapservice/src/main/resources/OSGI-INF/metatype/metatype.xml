@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metatype:MetaData xmlns:metainfo="http://www.osgi.org/xmlns/metatype/v1.0.0">
+    <metatype:OCD description="Creates ServiceObject instances to expose functionalities of connected sap servers." 
+                  name="Sap ServiceObjects - Component Factory"
+                  id="tr.com.eno.livo.server.serviceobjects.sapservice">
+        <AD name="Sap Service Name" 
+            id="sapservice.name"
+            required="true"
+            type="String"
+            description="Name of the sap service">
+        </AD>
+        <AD name="ASHOST" 
+            id="jco.ashost"
+            required="true"
+            type="String"
+            description="Host URL/IP">
+        </AD>
+        <AD name="SYSNR" 
+            id="jco.sysnr"
+            required="true"
+            type="String"
+            description="SYSNR">
+        </AD>
+        <AD name="Client" 
+            id="jco.client"
+            required="true"
+            type="String"
+            description="Client Number">
+        </AD>
+        <AD name="User" 
+            id="jco.user"
+            required="true"
+            type="String"
+            description="User Name">
+        </AD>
+        <AD name="Password" 
+            id="jco.passwd"
+            required="true"
+            type="String"
+            description="User Password">
+        </AD>
+        <AD name="Language" 
+            id="jco.lang"
+            required="true"
+            type="String"
+            description="System Language">
+        </AD>
+        <AD name="Pool Capacity" 
+            id="jco.pool.capacity"
+            required="false"
+            type="String"
+            description="Pool capacity of connection.">
+        </AD>
+        <AD name="Peak Limit" 
+            id="jco.peak.limit"
+            required="false"
+            type="String"
+            description="Peak Limit">
+        </AD>
+        <AD name="Expiration Time" 
+            id="jco.expiration.time"
+            required="false"
+            type="String"
+            description="Destination life time before renewing.">
+        </AD>
+        <AD name="Sap Router" 
+            id="jco.saprouter"
+            required="false"
+            type="String"
+            description="SAP Router">
+        </AD>
+    </metatype:OCD>
+    <metatype:Designate pid="tr.com.eno.livo.server.serviceobjects.sapservice"
+                        factoryPid="tr.com.eno.livo.server.serviceobjects.sapservice">
+        <metatype:Object ocdref="tr.com.eno.livo.server.serviceobjects.sapservice"/>
+    </metatype:Designate>
+</metatype:MetaData>

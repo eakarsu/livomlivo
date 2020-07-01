@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Livo Server - Cassandra Analytics Service
+Bundle-SymbolicName: tr.com.eno.livo.server.analytics.cassandra
+Bundle-Version: 1.0.0
+Bundle-Vendor: ENO
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: org.slf4j;version="1.7.2",
+ tr.com.eno.livo.server.analytics;version="1.0.0",
+ tr.com.eno.livo.server.analytics.report;version="1.0.0",
+ tr.com.eno.livo.server.authc;version="1.0.0",
+ tr.com.eno.livo.server.aspect;version="1.0.0",
+ org.aspectj.lang;version="1.8.5",
+ org.aspectj.runtime.internal;version="1.8.5",
+ org.aspectj.runtime.reflect;version="1.8.5",
+ com.codahale.metrics;version="3.1.2",
+ javax.management,
+ javax.net.ssl,
+ com.google.common.base;version="18.0.0",
+ com.google.common.collect;version="18.0.0",
+ com.google.common.util.concurrent;version="18.0.0",
+ com.google.common.io;version="18.0.0",
+ sun.misc
+Service-Component: OSGI-INF/*.xml

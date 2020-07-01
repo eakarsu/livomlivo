@@ -1,0 +1,2 @@
+(org.osgi.framework.AdminPermission "*" "metadata")
+(org.osgi.service.cm.ConfigurationPermission "*" "configure,target")

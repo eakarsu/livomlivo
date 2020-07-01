@@ -1,0 +1,27 @@
+
+<button class="show-page-loading-msg" data-textonly="false" data-textvisible="false" data-msgtext="" data-inline="true">Icon (default)</button>
+<button class="show-page-loading-msg" data-textonly="false" data-textvisible="true" data-msgtext="" data-inline="true">Icon + text</button>
+<button class="show-page-loading-msg" data-textonly="true" data-textvisible="true" data-msgtext="Text only loader" data-inline="true">Text only</button>
+<button class="hide-page-loading-msg" data-inline="true" data-icon="delete">Hide</button>
+
+<script type="text/javascript">
+$( document ).on( "click", ".show-page-loading-msg", function() {
+var $this = $( this ),
+	theme = $this.jqmData( "theme" ) || $.mobile.loader.prototype.options.theme,
+		msgText = $this.jqmData( "msgtext" ) || $.mobile.loader.prototype.options.text,
+		textVisible = $this.jqmData( "textvisible" ) || $.mobile.loader.prototype.options.textVisible,
+		textonly = !!$this.jqmData( "textonly" );
+		html = $this.jqmData( "html" ) || "";
+	$.mobile.loading( "show", {
+			text: msgText,
+			textVisible: textVisible,
+			theme: theme,
+			textonly: textonly,
+			html: html
+	});
+})
+.on( "click", ".hide-page-loading-msg", function() {
+	$.mobile.loading( "hide" );
+});
+
+</script>

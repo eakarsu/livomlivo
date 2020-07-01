@@ -1,0 +1,3 @@
+tr\com\eno\livo\server\authc\dummy\DummyUserAuthenticationService.class
+tr\com\eno\livo\server\authc\dummy\DummyAuthenticationServicePublisher.class
+tr\com\eno\livo\server\authc\dummy\DummyCompanyAuthenticationService.class

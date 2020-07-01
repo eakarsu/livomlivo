@@ -1,0 +1,11 @@
+tr\com\eno\livo\server\users\UserNotFoundException.class
+tr\com\eno\livo\server\users\InvalidPasswordException.class
+tr\com\eno\livo\server\users\InvalidUserGroupException.class
+tr\com\eno\livo\server\users\UserGroup.class
+tr\com\eno\livo\server\users\UserManagementService.class
+tr\com\eno\livo\server\users\UserQueryService.class
+tr\com\eno\livo\server\users\InvalidUserException.class
+tr\com\eno\livo\server\users\UserAlreadyExistsException.class
+tr\com\eno\livo\server\users\UserGroupNotFoundException.class
+tr\com\eno\livo\server\users\User.class
+tr\com\eno\livo\server\users\UserGroupAlreadyExistsException.class

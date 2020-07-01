@@ -1,0 +1,1650 @@
+/*
+	customize_report_element.css is
+	used in Customize Report Element (Reports) and Reports Editor (Config)
+*/
+/*div.cre-general-list {
+	padding: 4px;
+	border: 1px solid white;
+	border-left-color: #c6c6c6;
+	border-top-color: #c6c6c6;
+	height: 210px;
+	overflow: auto;
+}
+div.cre-general-list th {
+	text-align: left;
+	font-weight: normal;
+	white-space: nowrap;
+}
+div.cre-general-list td {
+	white-space: normal;
+}
+div.cre-general-list a:link,
+div.cre-general-list a:visited,
+div.cre-general-list a:hover {
+	text-decoration: none;
+	color: black;
+}*/
+/*div.cre-fields-header {  To be removed 
+	text-align: right;
+	padding: 4px;
+}*/
+table.cre-fields-header {
+	margin-top: 0px;
+	width: 100%;
+}
+
+table.cre-fields-header th, table.cre-fields-header td {
+	vertical-align: baseline;
+	padding: 0 0 3px 0;
+}
+
+table.cre-fields-header th {
+	font-weight: normal;
+	text-align: left;
+}
+
+table.cre-fields-header td {
+	text-align: right;
+}
+
+div.cre-fields-list {
+	border: 1px solid #D7D7D7;
+	height: 260px;
+	background-color: White;
+	overflow: auto;
+}
+
+div.cre-fields-list td {
+	padding: 2px 4px 2px 7px;
+	vertical-align: baseline;
+	color: #5f5f5f;
+}
+
+div.cre-fields-list td.label {
+	padding-left: 0px;
+	color: black;
+	cursor: default;
+}
+
+div.cre-fields-list td.disabled {
+	color: #b4b4b4;
+}
+/*
+	Non-editable field handling in General and Advanced tab
+*/
+/*table.cre-non-editable-field-header {
+	width: 100%;
+	margin-top: 5px;
+}
+table.cre-non-editable-field-header th,
+table.cre-non-editable-field-header td {
+	padding: 2px 0;
+	text-align: left;
+	font-weight: normal;
+}
+table.cre-non-editable-field-header td {
+	text-align: right;
+}
+div.cre-non-editable-field {
+	padding: 4px;
+	border: 1px solid white;
+	border-left-color: #c6c6c6;
+	border-top-color: #c6c6c6;
+	height: 110px;
+	overflow: auto;
+	margin-bottom: 5px;
+}*/
+/*
+	Filters tab
+*/
+table.cre-textarea-grid {
+	width: 99%;
+	margin-top: 7px;
+}
+
+table.cre-textarea-grid th, table.cre-textarea-grid td {
+	padding: 1px 0;
+	text-align: left;
+	font-weight: normal;
+}
+
+table.cre-textarea-grid td {
+	text-align: right;
+}
+
+table.cre-textarea-grid textarea {
+	margin: 0;
+	width: 99%;
+}
+/*
+	reports menu
+*/
+div.reports-menu-items {
+	width: 220px;
+	float: left;
+	margin-left: -100%;
+}
+
+div.reports-menu-items ul {
+	margin: 4px 0 0 0;
+}
+
+div.reports-menu-items li {
+	padding: 0;
+	list-style: none;
+}
+
+div.reports-menu-items li.active {
+	background-color: #e4e3e3;
+}
+
+div.reports-menu-items a {
+	display: block;
+	text-decoration: none;
+	padding: 5px 0px 5px 0px;
+	width: 100%;
+}
+
+div.reports-menu-items span {
+	/* We use a span as IE hack so that we can set the anchor to 100% width wher hover will work in IE on none text areas*/
+	padding-left: 7px;
+	padding-right: 14px;
+	display: block;
+}
+
+div.reports-menu-items img {
+	padding-right: 3px;
+}
+
+div.reports-menu-items a:link, div.reports-menu-items a:visited, div.reports-menu-items a:hover
+	{
+	/*color: #1b1b1b;*/
+	color: #4c4c4c;
+	line-height: 1.3em;
+}
+
+div.reports-menu-items a:hover {
+	background-color: #eaeaea;
+}
+/*
+	html body
+*/
+body.reports { /* Handles reports menu background */
+	background-color: white;
+	/*background-image: defined in css_style_map.cfg*/
+	background-position: top left;
+	background-repeat: repeat-y;
+}
+/*
+	generating report info
+*/
+#generating_report_info {
+	padding: 30px;
+}
+/*
+	reports menu and report box
+*/
+/*
+	report body
+*/
+div.report-wrapper {
+	float: left;
+	width: 100%;
+}
+
+div.report-column {
+	margin: 0 0 0 220px; /*This is the left space for the reports menu */
+	padding: 0;
+	background-color: white;
+	/*border: 1px solid white; */
+	/* report does not align to top without border! */
+}
+/*
+	report headers main left and right margin
+*/
+div.report-header {
+	padding: 21px 28px 7px 28px;
+	/*background-color: lime;*/
+}
+
+div.report-header-bar h1 {
+	margin: 0;
+	float: left;
+	font-size: 1.9em;
+	font-weight: normal;
+}
+
+div.report-header-bar span.main {
+	/*This is the main report label, without date, give it some right padding*/
+	padding-right: 30px;
+}
+
+div.report-header-bar small.date-time {
+	font-size: 0.7em;
+	/*font-weight: bold;*/
+}
+
+div.report-header-bar small.sub-date-time {
+	font-size: 0.5em;
+}
+
+div.report-header-bar small.lite {
+	color: #868686;
+}
+
+div.report-header-bar div.clear-date-and-filters {
+	float: right;
+}
+
+div.clear-date-and-filters a {
+	padding-left: 14px;
+}
+/*
+	report header/footer
+*/
+div.report-header-filters {
+	padding: 7px 0;
+	/*margin-bottom: 12px;*/
+}
+
+span.date-filter-error {
+	font-size: 0.55em;
+	border: 1px solid Red;
+	padding: 4px;
+}
+
+div.report-header-filters table {
+	margin: 0;
+	padding: 0;
+}
+
+div.report-header-filters th, div.report-header-filters td {
+	vertical-align: top;
+	white-space: normal;
+}
+
+div.report-header-filters th {
+	padding: 2px 0 0 0;
+	width: 16px;
+}
+
+div.report-header-filters td {
+	padding: 3px 0 3px 5px;
+}
+
+div.report-header-filters td.label {
+	/*width: 1%;*/
+	white-space: nowrap;
+}
+
+div.report-header-filters td.btn {
+	text-align: right;
+}
+
+div.report-header-filters span {
+	background-color: #FEFF4D;
+	padding: 1px 4px;
+}
+
+div.report-header-filters a {
+	margin-left: 8px;
+}
+/*
+	Description, header and footer text
+*/
+div.report-description-text, div.re-description-text {
+	padding: 4px 6px;
+	border: 1px solid #e4e6f2;
+	background-color: #f2f3f9;
+}
+
+div.report-description-text {
+	margin-top: 4px;
+}
+/*
+  report elements
+*/
+div.report-elements {
+	margin: 0 14px 0px 14px;
+}
+
+table.re-header-bar {
+	width: 100%;
+}
+
+table.re-header-bar th, table.re-header-bar td {
+	font-weight: normal;
+	vertical-align: bottom;
+}
+
+table.re-header-bar th {
+	padding: 3px;
+	text-align: left;
+	font-size: 145%;
+	color: #333333;
+}
+
+table.re-header-bar td {
+	padding: 0 0 3px 0;
+	text-align: right;
+}
+
+table.re-header-bar-border {
+	border-bottom: 1px solid #e2e2e2;
+}
+
+div.re-header-bar img {
+	/*vertical-align: middle;*/
+	/*margin: 0 4px;*/
+	/*cursor: pointer;*/
+	
+}
+
+table.re-header-bar a:link, table.re-header-bar a:visited, table.re-header-bar a:hover
+	{
+	text-decoration: none;
+}
+
+div.report-element, div.floated-report-element {
+	margin: 18px 14px;
+	padding: 0;
+	float: left;
+	clear: left;
+}
+
+div.floated-report-element {
+	clear: none;
+}
+/*
+	Overview report element
+*/
+div.overview-re {
+	width: auto;
+	height: auto;
+	overflow: visible;
+	padding: 9px 0 0 0;
+}
+
+table.overview-re th, table.overview-re td {
+	/*font-size: 15px;*/
+	/*color: #404040;*/
+	border-bottom: 1px solid #e2e2e2;
+}
+
+table.overview-re th {
+	padding: 5px 12px;
+	text-align: left;
+	font-weight: bold;
+	color: #282828;
+}
+
+table.overview-re td {
+	text-align: right;
+	padding: 5px 12px 5px 24px;
+}
+/* Compact overview report element */
+div.overview-re-compact {
+	padding: 5px 11px;
+	float: left;
+	font-weight: bold;
+	border-style: solid;
+	border-color: #dbdbdb;
+	border-width: 0 1px 1px 0;
+}
+
+div.orc-last {
+	border-right-width: 0;
+}
+
+div.overview-re-compact div { /* field label*/
+	padding: 0 17px 7px 0;
+	font-weight: normal;
+}
+
+div.overview-re-compact span {
+	font-size: 1.42em;
+	font-weight: normal;
+	color: #333333;
+}
+
+div.overview-re-compact span.avg-label {
+	font-size: 0.9em;
+	padding-left: 17px;
+	color: #a1a1a1;
+}
+
+div.overview-re-compact span.avg-value {
+	color: #a1a1a1;
+}
+/*
+	Standard report element
+*/
+div.standard-re-breakdown-info span {
+	background-color: #FEFF4D;
+}
+
+div.standard-re-graphs-toolbar {
+	text-align: right;
+	margin: 0;
+}
+
+div.standard-re-table-toolbar {
+	text-align: right;
+	margin: 0 0 4px 0;
+	vertical-align: middle;
+}
+
+div.standard-re-table-toolbar a {
+	margin: 0 7px;
+}
+
+table.standard-re {
+	/*margin: 15px 0 0 0;*/
+	margin: 0;
+	/*border-width: 0 1px 0 1px;*/
+	/*border-color: #e6e6e6;*/
+	/*border-style: solid;*/
+	background-color: White;
+	clear: both;
+}
+
+table.standard-re th {
+	text-align: left;
+	vertical-align: top;
+	padding: 7px 12px 8px 12px;
+	cursor: pointer;
+	/*border-bottom: 1px solid #dedede;*/
+	color: #282828;
+	background-color: #f2f2f2;
+}
+
+table.standard-re th:hover {
+	background-color: #e5e3e3;
+}
+
+table.standard-re th.txt {
+	text-align: left; /*text column*/
+}
+
+table.standard-re th.border { /*adds right cell border*/
+	/*border-right: 1px solid #e0e0e0;*/
+	
+}
+
+table.standard-re th.first {
+	border-left: 1px solid #f2f2f2;
+}
+
+table.standard-re th.last {
+	border-right: 1px solid #f2f2f2;
+}
+
+table.standard-re td {
+	text-align: right;
+	padding: 5px 12px 5px 12px;
+	vertical-align: baseline;
+	border: none;
+	/*border: 1px solid Red;*/
+	white-space: nowrap;
+}
+
+table.standard-re td.first {
+	border-left: 1px solid #e4e4e4;
+}
+
+table.standard-re td.last {
+	border-right: 1px solid #e4e4e4;
+}
+
+table.standard-re small, table.graph-legend small, div.report-header-filters small
+	{
+	/* Used to deemphasize text, i.e. Region and Country in Cities report */
+	color: #909090;
+	font-size: 1em;
+}
+
+img.standard-re-sort {
+	/* KHP 07/Oct/2010 - Changed the background color approach because
+	it doesn't work when generating PDF files*/
+	margin-right: 5px;
+}
+
+tr.outer-table td, tr.outer-table-no-border td {
+	font-weight: bold;
+	color: #282828;
+	padding-top: 12px;
+}
+
+tr.outer-table td {
+	border-top: 1px solid #dedede;
+}
+
+tr.standard-re-row-footer td, tr.standard-re-row-total td, tr.standard-re-inner-row-total td
+	{
+	padding-top: 7px;
+	padding-bottom: 7px;
+	font-weight: bold;
+	color: #282828;
+}
+
+tr.standard-re-row-total td {
+	/*background-color: #f2f2f2;*/
+	border: 0 solid #dedede;
+	border-width: 1px 0;
+}
+
+tr.total td, tr.sub-total td {
+	font-weight: bold;
+	color: #282828;
+}
+
+tr.sub-total td {
+	/*border-bottom: 1px solid #D9D9D9;*/
+	padding-bottom: 12px;
+}
+
+tr.standard-re-row-zoom td { /* bg color of zoomed row */
+	background-color: #d8d8d8;
+}
+
+tr.standard-re-row-select td { /* bg color of selected row */
+	background-color: Yellow;
+}
+
+table.standard-re td.zoom {
+	padding: 0 0 0 3px;
+	cursor: pointer;
+	text-align: center;
+}
+
+table.standard-re td.zoom-outer-tbl { /* pivot outer table */
+	padding: 0 0 0 6px;
+	cursor: pointer;
+	text-align: left;
+}
+
+table.standard-re td.zoom-inner-tbl { /* pivot inner table */
+	padding: 0 0 0 12px;
+	cursor: pointer;
+	text-align: right;
+}
+
+table.standard-re td.ind, table.standard-re td.ind-outer-tbl, table.standard-re td.ind-inner-tbl
+	{
+	color: #909090;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+table.standard-re td.ind-outer-tbl { /* pivot outer table */
+	padding-right: 9px;
+}
+
+table.standard-re td.ind-inner-tbl { /* pivot inner table */
+	padding-left: 12px;
+}
+
+table.standard-re td.txt, table.standard-re td.txt-inner-tbl, table.standard-re td.txt-outer-tbl
+	{
+	text-align: left;
+	white-space: normal;
+}
+
+table.standard-re td.txt-outer-tbl {
+	/* pivot outer table, 1st text column only */
+	padding-left: 0;
+}
+
+table.standard-re td.txt-inner-tbl {
+	/* pivot inner table, 1st text column only */
+	padding-left: 12px;
+}
+
+table.standard-re td.per, table.standard-re td.per-strong {
+	/*percent column*/
+	/*color: #5F5F5F;*/
+	
+}
+
+table.standard-re td.bar { /*bar graph column*/
+	text-align: left;
+	padding-left: 3px;
+	vertical-align: top;
+}
+
+table.standard-re div.bar {
+	font-size: 1px;
+	height: 13px;
+	margin-top: 1px;
+	background-color: #AFC8F6;
+}
+
+table.standard-re img.bar {
+	margin: 1px 0 0 0;
+}
+
+table.standard-re-table-control {
+	width: 100%;
+}
+
+table.standard-re-table-control th, table.standard-re-table-control td {
+	vertical-align: bottom;
+	color: #808080;
+	padding: 13px 0 4px 0;
+	font-weight: normal;
+}
+
+table.standard-re-table-control td {
+	text-align: right;
+	padding-top: 3px;
+	padding-bottom: 5px;
+}
+/* Subclass of standard-re-table-control */
+table.table-ctrl-session-page-paths th, table.table-ctrl-session-page-paths td
+	{
+	vertical-align: middle;
+	padding: 4px 0;
+}
+
+table.table-ctrl-session-page-paths th {
+	color: #333333;
+}
+
+table.table-ctrl-session-page-paths td {
+	padding-left: 64px;
+}
+/*
+	session_page_paths report element
+*/
+form.session-page-paths-form {
+	margin: 20px 0;
+}
+/*form.session-page-paths-form td {
+	background-color: #b5b5ff;
+	border: 1px solid #ff4500;
+}*/
+/*p.session-page-paths-events {*/
+/*margin: 0;*/
+/*padding: 10px 0 7px 12px;*/
+/*}*/
+table.session-page-paths-re {
+	height: auto;
+	margin: 1px;
+	padding: 0;
+	background-color: White;
+	border: none;
+}
+
+table.session-page-paths-re td {
+	padding: 5px 4px;
+}
+
+table.session-page-paths-re td.ind {
+	color: #909090;
+	text-align: right;
+	padding-left: 6px;
+}
+
+table.session-page-paths-re td.direction {
+	color: #909090;
+}
+
+table.session-page-paths-re td.events-left, table.session-page-paths-re td.events-right
+	{
+	padding-left: 21px;
+	/*padding-right: 2px;*/
+	text-align: right;
+}
+
+table.session-page-paths-re td.events-right {
+	padding-left: 40px;
+}
+
+table.session-page-paths-re span.start-page {
+	color: #00BB02;
+	font-weight: bold;
+}
+
+table.session-page-paths-re span.exit-page {
+	color: Red;
+	font-weight: bold;
+}
+
+table.session-page-paths-re span.start-exit-page {
+	color: #909090;
+}
+
+table.session-page-paths-re a:link, table.session-page-paths-re a:visited,
+	table.session-page-paths-re a:hover {
+	text-decoration: none;
+	color: #0000cd;
+	cursor: default;
+}
+
+table.session-page-paths-re a:hover {
+	color: white;
+	background-color: #0000cd;
+}
+/*
+	session_paths report element
+*/
+div.session-paths-report-element {
+	padding: 14px 25px;
+}
+
+p.session-paths {
+	margin: 7px 0;
+	/*font-size: 1.1em;*/
+	font-weight: bold;
+	cursor: default;
+}
+
+p.session-paths span {
+	margin-left: 16px;
+	color: #1d1dc0;
+}
+/* 2008-11-29 - GMF - Added highlighting for Reset/Collapse All */
+p.session-paths span.highlight {
+	color: White;
+	background-color: #1d1dc0;
+}
+
+div.session-paths {
+	margin: 5px 0;
+	/*font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;*/
+}
+
+div.session-paths ul {
+	padding: 0;
+	margin: 0 0 0 33px;
+}
+
+div.session-paths ul.root {
+	margin-left: 23px;
+}
+
+div.session-paths li {
+	/*background-color: Lime;*/
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	white-space: nowrap;
+	/*background-image: url(../picts/session_paths/vertical_line.gif); -- Defined in css_style_map.cfg -- */
+	background-position: top left;
+	background-repeat: repeat-y;
+}
+
+div.session-paths li.last {
+	/*border-left-width: 0;*/
+	background-repeat: no-repeat;
+}
+
+div.session-paths img {
+	/*padding-right: 4px;*/
+	padding: 0;
+	margin: 0;
+	vertical-align: middle;
+}
+
+div.session-paths span {
+	cursor: default;
+	color: Black;
+	margin-left: 9px;
+	text-decoration: none;
+	vertical-align: middle;
+	background-color: White;
+	padding: 0 2px;
+}
+
+div.session-paths span.highlight {
+	color: White;
+	background-color: #1d1dc0;
+}
+
+div.session-paths span.exit {
+	color: Red;
+}
+
+div.session-paths em {
+	font-style: normal;
+	color: #9B9B9B;
+}
+
+div.session-paths span.add-rows, div.session-paths span.add-rows-highlight
+	{
+	padding: 0 3px;
+	margin: 0;
+}
+
+div.session-paths span.add-rows {
+	color: #1d1dc0;
+	background-color: White;
+}
+
+div.session-paths span.add-rows-highlight {
+	color: White;
+	background-color: #1d1dc0;
+}
+
+div.session-paths span.add-rows-b {
+	margin: 0;
+}
+/*
+	session page paths page lookup
+*/
+div.session-page-paths-lookup {
+	position: absolute;
+	top: 100px;
+	left: 240px;
+	display: none;
+	width: 570px;
+	padding: 12px;
+	background-color: #eeece1;
+	index: 200;
+}
+
+div.session-page-paths-lookup select {
+	width: 100%;
+}
+
+button.paging {
+	border-width: 0;
+	/*padding-top: 2px;
+	padding-bottom: 2px;*/
+	font-size: 0.9em;
+	background-color: #F6F6F6;
+	margin: 0 5px;
+}
+/*
+	Zoom info panel (change date and add filter items info)
+*/
+table.zoom-info td {
+	padding: 7px;
+	vertical-align: top;
+}
+/* 
+	graphs
+*/
+span.graph-label-sort-info {
+	font-weight: normal;
+	font-style: italic;
+	color: #B2B2B2;
+}
+/* 
+	bar graphs, line graph and pie chart
+*/
+div.graph-container, table.pie-chart-container {
+	margin: 11px;
+}
+
+table.graph-container td {
+	padding: 0;
+	text-align: left;
+	vertical-align: top;
+	/*border: 2px solid Lime;*/
+}
+
+table.graph-container td.label {
+	padding: 0 0 7px 0;
+	text-align: left;
+	vertical-align: middle;
+	font-weight: bold;
+	color: #282828;
+}
+
+table.graph-container td.y-label-container {
+	vertical-align: bottom;
+	padding-bottom: 3px;
+}
+
+table.graph-x-label td {
+	padding: 0;
+	font-size: 10px;
+	text-align: center;
+	border: none;
+	white-space: normal;
+	/*background-color: orange;*/
+}
+
+table.graph-x-label span.label {
+	padding: 0px 1px 0px 3px;
+	/*background-color: red;*/
+}
+
+table.graph-x-label td.color-debug {
+	/*background-color: #C6FFC6;*/
+	
+}
+
+table.graph-y-label {
+	width: 100%;
+	/*border: 2px solid #FF8C00;*/
+}
+
+table.graph-y-label td {
+	text-align: right;
+	vertical-align: middle;
+	font-size: 10px;
+	padding: 0 5px 0 0;
+	white-space: nowrap;
+}
+
+table.graph-y-percent-label td {
+	text-align: right;
+	vertical-align: middle;
+	font-size: 10px;
+	padding: 0;
+	white-space: nowrap;
+}
+/*
+	pie-charts
+*/
+table.pie-chart-container th {
+	padding: 4px 4px 7px 4px;
+	text-align: left;
+	/*font-size: 1.2em;*/
+}
+
+table.pie-chart-container td.pie-image {
+	text-align: center;
+	vertical-align: top;
+	padding: 3px;
+}
+/*table.pie-chart-legend {
+	margin-left: 16px;
+}*/
+table.graph-legend {
+	margin-left: 18px;
+	/*margin: 0px 0px 18px 18px;*/
+	/*border: 1px solid #FF3300;*/
+}
+
+table.graph-legend th {
+	vertical-align: middle;
+	padding: 4px 4px;
+	font-weight: normal;
+	color: #909090;
+	text-align: right;
+}
+
+table.graph-legend td {
+	vertical-align: middle;
+	padding: 4px 4px;
+}
+
+table.graph-legend td.percent, table.graph-legend td.number {
+	/*color: #434343;*/
+	padding-right: 9px;
+	text-align: right;
+	white-space: nowrap;
+}
+
+table.graph-legend td.number {
+	color: #838383;
+}
+
+div.graph-legend-color {
+	width: 0;
+	height: 0;
+	font-size: 1px;
+	/*border-style: solid;
+	border-width: 5px 6px 6px 6px;*/
+	/* KHP 13/Mar/2013 - border-color does not work in Gmail and Outlook, start using background-color. */
+	/*width: 12px; Must be defined in style attribute for Gamil display */
+	/*height: 11px; Must be defined in style attribute for Gamil display */
+}
+/* Miscellanious */
+div.no-data-info {
+	padding: 3px 4px;
+	background-color: #ececec;
+}
+
+button {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+table.form-header {
+	width: 100%;
+}
+
+table.form-header td {
+	padding: 5px 8px;
+	/*font-size: 1.0em;*/
+	color: White;
+	background-color: #495396;
+	vertical-align: middle;
+}
+
+div.form-body {
+	height: auto;
+	padding: 0px 21px;
+	margin: 0;
+}
+
+div.form-body-with-frame {
+	border-color: #9F9F9F;
+	border-style: solid;
+	border-width: 0 1px 1px 1px;
+	background-color: White;
+	padding: 24px;
+}
+/*
+	Date picker
+*/
+table.dp-header-bar {
+	border: 1px solid White;
+	width: 100%;
+}
+
+table.dp-header-bar th, table.dp-header-bar td {
+	padding: 4px;
+	text-align: left;
+	vertical-align: top;
+	background-color: #f3f2eb;
+}
+
+table.dp-header-bar th {
+	font-weight: bold;
+	color: #464646;
+}
+
+table.dp-header-bar td {
+	text-align: right;
+}
+/*div.date-picker-date-display {
+	margin: 0 12px;
+	padding-top: 8px;
+}
+div.date-picker-date-display span {
+	font-weight: bold;
+	padding-left: 5px;
+}*/
+div.dp-outer-container {
+	margin: 14px;
+	border: 1px solid #a2a299;
+	background-color: white;
+	/*border: 2px solid red;  TEMP */
+}
+
+div.dp-inner-container {
+	border-style: solid;
+	border-width: 1px 0 0 0;
+	border-color: #D4D4D4;
+	/*background-color: orange;  TEMP 
+	border: 6px solid green;  TEMP */
+}
+
+input.dp-relative-date-unit-count {
+	width: 40px;
+	margin: 0 5px;
+	font-size: 0.94em;
+	padding: 0;
+	/*border: 1px solid #dfdfdf;*/
+}
+
+table.date-picker td {
+	border-width: 0 1px 0 0;
+	border-style: solid;
+	border-color: #D4D4D4;
+	vertical-align: top;
+	font-size: 0.94em;
+	padding: 2px 0 0 0;
+	background-color: White;
+}
+
+table.date-picker td.days {
+	border-right-width: 0;
+}
+
+table.date-picker td.vertical-spacer {
+	border-right-width: 0;
+}
+
+table.date-picker td.month-year-display {
+	padding: 4px 7px 0 0;
+	border-right-width: 0;
+}
+
+table.date-picker div.month-year-display {
+	padding: 0;
+	margin: 0;
+	color: #888888;
+	font-size: 1.1em;
+	font-weight: bold;
+	text-align: right;
+}
+
+table.date-picker a:link, table.date-picker a:visited, table.date-picker a:hover
+	{
+	display: block;
+	padding: 0px 0px 0px 4px;
+	margin: 0 2px;
+	border: solid 1px White;
+	text-decoration: none;
+	color: Black;
+	cursor: default;
+	/*height: 0.1em; Fixes IE hover bug, applied via Javascript in IE only!*/
+}
+
+table.date-picker a.semi-active:link, table.date-picker a.semi-active:visited,
+	table.date-picker a.semi-active:hover {
+	/*border-color: #436da9;*/
+	border-color: #3d80df;
+}
+
+table.date-picker a.active:link, table.date-picker a.active:visited,
+	table.date-picker a.active:hover {
+	/*border-color: #436da9;*/
+	/*background-color: #436da9;*/
+	/*color: white;*/
+	color: white;
+	border-color: #3d80df;
+	background-color: #3d80df;
+}
+/*
+	Date picker - days table
+*/
+table.date-picker-days {
+	margin: 2px 7px 0 7px;
+}
+
+table.date-picker-days th {
+	padding: 1px 4px 4px 4px;
+	font-weight: normal;
+	text-align: right;
+}
+
+table.date-picker-days th.marked {
+	color: Red;
+}
+
+table.date-picker-days td {
+	padding: 0px;
+	text-align: right;
+	border-width: 0;
+}
+
+table.date-picker-days a:link, table.date-picker-days a:visited, table.date-picker-days a:hover
+	{
+	display: block;
+	padding: 4px;
+	margin: 0;
+	text-decoration: none;
+	color: Black;
+	cursor: default;
+	/*height: 0.1em; Fixes IE hover bug, applied via Javascript in IE only!*/
+}
+
+table.date-picker-days a.no-log-data:link, table.date-picker-days a.no-log-data:visited,
+	table.date-picker-days a.no-log-data:hover {
+	display: block;
+	padding: 4px;
+	text-decoration: none;
+	color: #BEBEBE;
+	cursor: default;
+}
+
+table.date-picker a:hover, table.date-picker-days a:hover {
+	background-color: #E8E8E8;
+}
+
+table.date-picker-days a.no-log-data:hover {
+	background-color: transparent;
+}
+
+div.date-picker-fixed-date-info {
+	padding: 4px 0 4px 20px;
+	background-color: Yellow;
+}
+/*
+	Date picker - custom df
+*/
+div.date-picker-custom {
+	margin: 40px 14px;
+	height: 120px;
+	/*border: 1px solid #a2a299;*/
+	/*background-color: fuchsia;*/
+}
+
+div.date-picker-custom td {
+	vertical-align: middle;
+}
+/*
+	Global-filter - Items panel
+*/
+div.gf-loading-info {
+	width: 580px;
+	height: 300px;
+}
+
+div.gf-loading-info h3 {
+	margin: 0;
+	padding: 20px;
+}
+
+div.filter-items-main-container {
+	/*border: 1px solid Red;*/
+	padding: 0 12px;
+	width: 580px;
+}
+
+div.filter-items-panel {
+	display: none;
+}
+
+div.filter-items-panel-header {
+	text-align: right;
+	padding: 7px 0;
+	white-space: nowrap;
+}
+
+div.scheduler-filter-items-panel-header {
+	text-align: left;
+	padding-right: 40px;
+}
+
+div.filter-items-panel-body {
+	border: 1px solid #D7D7D7;
+	height: 230px;
+	background-color: White;
+	overflow: scroll;
+}
+
+div.scheduler-filter-items-panel-body {
+	height: 150px;
+}
+
+div.filter-items-panel-body table {
+	width: 100%;
+}
+
+div.filter-items-panel-body td {
+	padding: 4px;
+	border-bottom: 1px solid #F6F6F6;
+	vertical-align: baseline;
+}
+
+td.filter-item-controls {
+	text-align: right;
+	padding: 4px;
+	color: #D1D1D1;
+}
+
+div.filter-items-panel-body a:link, div.filter-items-panel-body a:visited,
+	div.filter-items-panel-body a:hover {
+	padding: 0 6px;
+}
+/*
+	Filters - Save checked As panel
+*/
+#save_checked_filters_as_section {
+	width: 500px;
+	display: none;
+	background-color: #FF8C00;
+	z-index: 10;
+	/*position: absolute;
+	top: 50px;
+	left: 50px;*/
+}
+/*
+	Filters - Editor panel
+*/
+div.filter-editor-ok-cancel-container {
+	/*background-color: Fuchsia;*/
+	text-align: right;
+	/*clear: both;*/
+}
+
+#edit_filters_section {
+	/*width: 900px;
+	height: 480px;
+	display: block;
+	position: absolute;
+	top: 70px;
+	left: 70px;
+	z-index: 10;
+	background-color: White;
+	border: 1px dotted Red;*/
+	
+}
+
+table.edit-filter-form-grid {
+	width: 100%;
+}
+
+table.edit-filter-form-grid td {
+	vertical-align: top;
+	/*border: 1px solid Fuchsia;*/
+}
+
+table.filter-editor-item-form {
+	width: 100%;
+	/*border: 1px solid #FF1493;*/
+}
+
+table.filter-editor-item-form th {
+	/*background-color: #FFE1FF;*/
+	
+}
+
+table.filter-editor-item-form td {
+	white-space: nowrap;
+}
+/******************************************************
+table-options
+******************************************************/
+table.table-options-columns th, table.table-options-rows th {
+	text-align: left;
+}
+
+table.table-options-columns td {
+	padding: 4px 0px 4px 0px;
+	vertical-align: baseline;
+	white-space: nowrap;
+}
+
+table.table-options-columns td.label {
+	padding-left: 8px;
+	padding-right: 12px;
+}
+
+table.table-options-columns label.light {
+	color: Gray;
+}
+
+table.table-options-rows td {
+	padding: 4px 24px 4px 7px;
+}
+
+table.table-options-sort-by {
+	margin: 6px 0px 6px 0px;
+}
+
+table.table-options-sort-by td {
+	padding: 3px 6px 3px 7px;
+}
+
+table.table-options-maximum-rows td {
+	padding: 7px 4px 3px 0px;
+}
+/******************************************************
+send report by email report window
+******************************************************/
+table.email-report td {
+	padding: 3px;
+}
+/******************************************************
+Database info grid
+******************************************************/
+table.report-database-info-grid {
+	margin: 5px 0;
+	width: 100%;
+	border-width: 1px 0 0 1px;
+	border-style: solid;
+	border-color: #cccccc;
+}
+
+table.report-database-info-grid th, table.report-database-info-grid td {
+	font-weight: normal;
+	text-align: left;
+	padding: 3px;
+	white-space: normal;
+	vertical-align: top;
+	border-width: 0 1px 1px 0;
+	border-style: solid;
+	border-color: #cccccc;
+}
+
+table.report-database-info-grid td {
+	width: 80%;
+}
+
+table.db-info-grid th {
+	white-space: nowrap;
+}
+/******************************************************
+Manage Macros list
+******************************************************/
+table.manage-macros-layout td {
+	padding: 0;
+	vertical-align: top;
+}
+
+div.manage-macros {
+	width: 470px;
+	height: 200px;
+	border: 1px solid #CBCBCB;
+	background-color: White;
+	overflow: scroll;
+}
+
+div.manage-macros p {
+	margin: 0;
+	padding: 4px 5px;
+}
+
+div.manage-macros th, div.manage-macros td {
+	text-align: left;
+	padding: 3px 7px;
+	font-weight: normal;
+}
+
+div.manage-macros th {
+	width: 98%;
+	white-space: normal;
+	cursor: default;
+}
+/*tr.manage-macros {
+}*/
+tr.manage-macros-select {
+	color: White;
+	background-color: #436da9;
+}
+
+tr.manage-macros-select a:link, tr.manage-macros-select a:visited, tr.manage-macros-select a:hover
+	{
+	color: White;
+}
+/*
+	Columns info panel
+*/
+table.columns-info td {
+	vertical-align: top;
+	background-color: white;
+}
+
+div.columns-info-menu, div.columns-info-text {
+	padding: 9px;
+	height: 300px;
+	overflow: auto;
+}
+
+div.columns-info-text {
+	width: 220px;
+}
+
+div.columns-info-menu a {
+	display: block;
+}
+/******************************************************
+error messages
+******************************************************/
+#error_message hr {
+	height: 1px;
+}
+
+#error_message pre {
+	font-size: 1em;
+}
+/******************************************************
+active filters info
+******************************************************/
+div.active-filters-info {
+	padding: 1px 20px 14px 20px;
+	background-color: white;
+	width: 600px;
+}
+
+div.active-filters-info h4 {
+	margin: 0.7em 0;
+}
+
+div.active-filters-info p, div.active-filters-info pre {
+	margin: 0.4em 0;
+}
+
+div.active-filters-info pre {
+	/*background-color: #f1f1f1;*/
+	padding: 4px;
+	margin: 0 0 1.4em 0;
+	border: 1px solid #d6d8dd;
+}
+/*
+	Calendar
+*/
+div.calendar {
+	/*border: 1px solid Red;*/
+	display: none;
+	padding: 0 28px;
+}
+
+div.calendar a:link, div.calendar a:visited, div.calendar a:hover {
+	text-decoration: none;
+	cursor: default;
+}
+
+div.calendar a.active:link, div.calendar a.active:visited, div.calendar a.active:hover
+	{
+	color: #313131;
+	background-color: #BAEFBB;
+}
+
+div.calendar a:hover {
+	background-color: #F4F4F4;
+}
+/*
+	Calendar header
+*/
+table.calendar-header {
+	width: 100%;
+	border-bottom: 1px solid #e3e3e3;
+	margin-bottom: 14px;
+}
+
+table.calendar-header th {
+	text-align: left;
+	vertical-align: middle;
+	font-weight: normal;
+	padding: 7px 5px 4px 0;
+	white-space: nowrap;
+	width: 5%;
+}
+/*table.calendar-header td {
+	font-style: italic;
+	white-space: normal;
+	padding-left: 5px;
+}*/
+table.calendar-header a:link, table.calendar-header a:visited, table.calendar-header a:hover
+	{ /*entire date range link*/
+	padding: 2px 5px;
+}
+/*
+	Calendar body
+*/
+div.c-year {
+	clear: both;
+	margin: 12px 0 9px 0;
+	/*margin-top: 3px;
+	margin-bottom: 7px;*/
+}
+
+div.c-year a:link, div.c-year a:visited, div.c-year a:hover {
+	font-size: 1.2em;
+	font-weight: bold;
+	padding: 3px 7px;
+	border: 1px solid #E3E3E3;
+}
+
+table.c-month {
+	width: auto;
+	margin: 7px 14px 7px 0px;
+	float: left;
+	border: 1px solid #E3E3E3;
+	height: auto;
+}
+
+table.c-month-header {
+	width: 100%;
+}
+
+table.c-month-header th, table.c-month-header td {
+	vertical-align: baseline;
+	text-align: left;
+	/*font-weight: normal;*/
+	padding: 0;
+	/*color: #B8B8B8;*/
+}
+
+table.c-month-header th {
+	width: 5%;
+}
+
+table.c-month-header td {
+	text-align: right;
+}
+
+table.c-month-header a:link, table.c-month-header a:visited, table.c-month-header a:hover,
+	table.c-month-header span, table.c-month-header td {
+	padding: 4px 5px;
+}
+
+table.c-month-header a:link, table.c-month-header a:visited, table.c-month-header a:hover,
+	table.c-month-header span {
+	display: block;
+	/*height: 0.1em;*/
+}
+
+table.c-days th, table.c-days td {
+	padding: 0;
+	text-align: right;
+	font-size: 0.85em;
+}
+
+table.c-days th { /*weekday labels*/
+	font-weight: normal;
+	color: #B79300;
+	padding-right: 3px;
+}
+
+table.c-days th.marked {
+	color: Red;
+}
+
+table.c-days a.c-week:link, table.c-days a.c-week:visited, table.c-days a.c-week:hover
+	{
+	color: #8C8DFF;
+}
+
+table.c-days a.c-week:link, table.c-days a.c-week:visited, table.c-days a.c-week:hover,
+	table.c-days span.c-week {
+	/*font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;*/
+	/*font-size: 1.1em;*/
+	
+}
+
+table.c-days a:link, table.c-days a:visited, table.c-days a:hover, table.c-days span
+	{
+	display: block;
+	padding: 3px;
+	/*height: 0.1em;*/ /*IE hover fix*/
+}
+/*
+	inactive labels, days and weekdays
+*/
+table.c-month-header th, table.c-month-header td {
+	color: #ABABAB;
+}
+
+table.c-days span, table.c-days span.c-week {
+	color: #CDCDCD;
+}

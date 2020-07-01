@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0"
+	name="tr.com.eno.livo.server.serviceobjects.configurator.jmx"
+	scr:xmlns="http://www.osgi.org/xmlns/scr/v1.1.0/scr" activate="start"
+	deactivate="stop" immediate="true">
+	<implementation
+		class="tr.com.eno.livo.server.serviceobjects.configurator.jmx.ServiceObjectsConfigurationAdminServicePublisher" />
+	<property name="object.name" type="String"
+		value="tr.com.eno.livo.server.serviceobjects.configurator:type=ServiceObjectConfiguratorService" />
+	<reference bind="registerService" cardinality="1..1"
+		interface="tr.com.eno.livo.server.serviceobjects.configurator.ServiceObjectConfiguratorService"
+		name="ServiceObjectConfiguratorService" unbind="unregisterService" />
+</scr:component>

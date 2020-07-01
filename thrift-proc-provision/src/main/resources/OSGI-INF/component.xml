@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0"
+	name="tr.com.eno.livo.server.thrift.processor.provision" scr:xmlns="http://www.osgi.org/xmlns/scr/v1.1.0/scr">
+	<implementation
+		class="tr.com.eno.livo.server.thrift.processor.provision.ProvisioningServiceProcessor" />
+	<property name="service.pid" type="String"
+		value="tr.com.eno.livo.server.thrift.processor.provision.ProvisioningServiceProcessor" />
+	<property name="thrift.service" type="String" value="ProvisioningService" />
+	<reference bind="registerService" cardinality="1..n"
+		interface="tr.com.eno.livo.server.provision.ProvisioningService" name="ProvisioningService"
+		policy="dynamic" unbind="unregisterService" />
+	<service>
+		<provide interface="org.apache.thrift.TProcessor" />
+	</service>
+</scr:component>
+

@@ -1,0 +1,14 @@
+-XaddSerialVersionUID
+-XnotReweavable
+-1.7
+-encoding
+UTF-8
+-classpath
+D:\Livo\livo-server\authentication-spi\target\authentication-spi-1.0.0.jar;C:\Users\Livo\.m2\repository\org\osgi\org.osgi.core\4.3.1\org.osgi.core-4.3.1.jar;C:\Users\Livo\.m2\repository\org\testng\testng\6.8.1\testng-6.8.1.jar;C:\Users\Livo\.m2\repository\org\mockito\mockito-all\2.0.2-beta\mockito-all-2.0.2-beta.jar;D:\Livo\livo-server\aspects-shared\target\aspects-shared-1.0.0.jar;C:\Users\Livo\.m2\repository\org\slf4j\slf4j-api\1.7.7\slf4j-api-1.7.7.jar;C:\Users\Livo\.m2\repository\org\aspectj\aspectjrt\1.8.5\aspectjrt-1.8.5.jar;C:\Users\Livo\.m2\repository\org\apache\commons\commons-lang3\3.4\commons-lang3-3.4.jar;C:\Users\Livo\.m2\repository\org\mockito\mockito-core\1.10.19\mockito-core-1.10.19.jar;C:\Users\Livo\.m2\repository\org\slf4j\slf4j-simple\1.7.12\slf4j-simple-1.7.12.jar;D:\Livo\livo-server\application-spi\target\application-spi-1.0.0.jar;D:\Livo\livo-server\filetransfer-spi\target\filetransfer-spi-1.0.0.jar;D:\Livo\livo-server\users-spi\target\users-spi-1.0.0.jar;C:\Users\Livo\.m2\repository\org\osgi\org.osgi.compendium\4.3.1\org.osgi.compendium-4.3.1.jar;D:\Livo\livo-server\authentication-dummy\target\classes
+-aspectpath
+D:\Livo\livo-server\aspects-shared\target\aspects-shared-1.0.0.jar
+-d
+D:\Livo\livo-server\authentication-dummy\target\classes
+D:\Livo\livo-server\authentication-dummy\src\main\java\tr\com\eno\livo\server\authc\dummy\DummyAuthenticationServicePublisher.java
+D:\Livo\livo-server\authentication-dummy\src\main\java\tr\com\eno\livo\server\authc\dummy\DummyCompanyAuthenticationService.java
+D:\Livo\livo-server\authentication-dummy\src\main\java\tr\com\eno\livo\server\authc\dummy\DummyUserAuthenticationService.java

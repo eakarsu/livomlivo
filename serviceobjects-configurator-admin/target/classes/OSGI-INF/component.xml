@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0"
+	name="tr.com.eno.livo.server.serviceobjects.configurator.admin"
+	scr:xmlns="http://www.osgi.org/xmlns/scr/v1.1.0/scr" activate="start"
+	deactivate="stop" immediate="true">
+	<implementation
+		class="tr.com.eno.livo.server.serviceobjects.configurator.admin.ServiceObjectsConfigurationAdmin" />
+	<property name="service.pid" type="String"
+		value="tr.com.eno.livo.server.serviceobjects.configurator.admin.ServiceObjectsConfigurationAdmin" />
+	<reference bind="registerSOProxyService" cardinality="1..n"
+		interface="tr.com.eno.livo.server.serviceobjects.ServiceObjectProxyService"
+		name="ServiceObjectProxyService" policy="dynamic" unbind="unregisterSOProxyService"
+		target="(!(service.pid=*ObjectsConfigurationAdmin))" />
+
+	<reference bind="registerConfigAdminService" cardinality="1..1"
+		interface="org.osgi.service.cm.ConfigurationAdmin" name="ConfigAdmin"
+		policy="static" unbind="unregisterConfigAdminService" />
+	<service>
+		<provide
+			interface="tr.com.eno.livo.server.serviceobjects.configurator.ServiceObjectConfiguratorService" />
+	</service>
+</scr:component>

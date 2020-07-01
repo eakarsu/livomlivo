@@ -1,0 +1,5 @@
+tr\com\eno\livo\server\authc\AuthenticationService.class
+tr\com\eno\livo\server\authc\AuthenticationToken.class
+tr\com\eno\livo\server\authc\CompanyAuthenticationService.class
+tr\com\eno\livo\server\authc\DeviceAuthenticationService.class
+tr\com\eno\livo\server\authc\UserAuthenticationService.class

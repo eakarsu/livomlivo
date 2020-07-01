@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Livo Server - Service Objects SPI
+Bundle-SymbolicName: tr.com.eno.livo.server.serviceobjects.spi
+Bundle-Version: 1.0.0
+Bundle-Vendor: ENO
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: tr.com.eno.livo.server.authc;version="1.0.0"
+Export-Package: tr.com.eno.livo.server.serviceobjects;version="1.0.0"

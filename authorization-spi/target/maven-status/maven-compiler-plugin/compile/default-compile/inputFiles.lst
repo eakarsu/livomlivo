@@ -1,0 +1,6 @@
+D:\Livo\livo-server\authorization-spi\src\main\java\tr\com\eno\livo\server\authz\AuthorizationQueryService.java
+D:\Livo\livo-server\authorization-spi\src\main\java\tr\com\eno\livo\server\authz\policy\AllowAllAuthorizationPolicy.java
+D:\Livo\livo-server\authorization-spi\src\main\java\tr\com\eno\livo\server\authz\policy\FineGrainedAuthorizationPolicy.java
+D:\Livo\livo-server\authorization-spi\src\main\java\tr\com\eno\livo\server\authz\AuthorizationManagementService.java
+D:\Livo\livo-server\authorization-spi\src\main\java\tr\com\eno\livo\server\authz\policy\DenyAllAuthorizationPolicy.java
+D:\Livo\livo-server\authorization-spi\src\main\java\tr\com\eno\livo\server\authz\policy\AuthorizationPolicy.java

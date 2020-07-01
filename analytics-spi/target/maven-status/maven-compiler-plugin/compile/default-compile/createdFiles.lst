@@ -1,0 +1,12 @@
+tr\com\eno\livo\server\analytics\AnalyticsReceiverService.class
+tr\com\eno\livo\server\analytics\event\AnalyticsServiceObjectsEventHandler.class
+tr\com\eno\livo\server\analytics\ErrorRecord.class
+tr\com\eno\livo\server\analytics\Report$Type.class
+tr\com\eno\livo\server\analytics\EventRecord.class
+tr\com\eno\livo\server\analytics\UnsupportedReportException.class
+tr\com\eno\livo\server\analytics\EventRecordFailedException.class
+tr\com\eno\livo\server\analytics\Report.class
+tr\com\eno\livo\server\analytics\Record.class
+tr\com\eno\livo\server\analytics\Report$Period.class
+tr\com\eno\livo\server\analytics\event\AnalyticsAuthenticationEventHandler.class
+tr\com\eno\livo\server\analytics\AnalyticsReportingService.class

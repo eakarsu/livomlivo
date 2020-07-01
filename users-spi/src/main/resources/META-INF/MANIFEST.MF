@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Livo Server - User Management SPI
+Bundle-SymbolicName: tr.com.eno.livo.server.users.spi
+Bundle-Version: 1.0.0
+Bundle-Vendor: ENO
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: tr.com.eno.livo.server.authc;version="1.0.0", 
+ org.osgi.framework;version="1.7.0",
+ org.slf4j;version="1.7.2"
+Export-Package: tr.com.eno.livo.server.users;version="1.0.0"
+
