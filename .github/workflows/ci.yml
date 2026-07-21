@@ -1,0 +1,75 @@
+name: Governed release CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: governed-release
+    env:
+      NODE_ENV: test
+      DATABASE_PATH: /tmp/livomlivo-ci.sqlite
+      DEPLOYMENT_WEBHOOK_URL: http://127.0.0.1:3999/deploy
+      TOKEN_ORGANIZATION_SLUG: ci-tenant
+      TOKEN_ORGANIZATION_NAME: CI Tenant
+      TOKEN_LABEL: ci-operator
+      TOKEN_ROLE: OPERATOR
+      TOKEN_TTL_DAYS: 1
+      TOKEN_OUTPUT_PATH: /tmp/livomlivo-ci-token
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: governed-release/package-lock.json
+      - name: Generate ephemeral workflow credentials
+        run: |
+          echo "IDEMPOTENCY_SECRET=$(openssl rand -hex 32)" >> "$GITHUB_ENV"
+          echo "DEPLOYMENT_WEBHOOK_SECRET=$(openssl rand -hex 32)" >> "$GITHUB_ENV"
+      - run: npm ci
+      - run: npm test
+      - run: npm run test:integration
+      - run: npm audit --audit-level=low
+      - run: npm run db:migrate
+      - run: npm run db:migrate
+      - run: npm run token:create
+      - run: npm run db:verify
+      - name: Backup and restore verification
+        run: |
+          npm run backup -- /tmp/livomlivo-ci-backup.sqlite
+          npm run restore:verify -- /tmp/livomlivo-ci-backup.sqlite /tmp/livomlivo-ci-restored.sqlite
+      - name: Runtime smoke
+        run: |
+          npm start >/tmp/livomlivo-server.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          for attempt in 1 2 3 4 5; do
+            curl --fail --silent http://127.0.0.1:3020/health/ready >/dev/null && break
+            sleep 1
+          done
+          test "$(curl --silent --output /dev/null --write-out '%{http_code}' http://127.0.0.1:3020/health/live)" = 200
+          test "$(curl --silent --output /dev/null --write-out '%{http_code}' http://127.0.0.1:3020/health/ready)" = 200
+          test "$(curl --silent --output /dev/null --write-out '%{http_code}' http://127.0.0.1:3020/v1/releases)" = 401
+          test "$(curl --silent --output /dev/null --write-out '%{http_code}' -H 'Origin: https://evil.example' http://127.0.0.1:3020/health/live)" = 403
+      - run: docker build -t livomlivo-governed-release:test .
+
+  secrets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Known credential-bearing legacy files remain deleted
+        run: |
+          test ! -e serviceobjects-rest/src/test/java/tr/com/eno/livo/serviceobjects/rest/RESTServiceObjectProxyServiceTest.java
+          test ! -e web-ui/src/main/webapp/WEB-INF/frameworkfiles/templates/jquery/emdot/assets/js/grabtweets.php
+      - uses: gitleaks/gitleaks-action@v2

@@ -1,0 +1,25 @@
+{
+  "name": "livomlivo-governed-release",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22 <25"
+  },
+  "scripts": {
+    "start": "node src/index.mjs",
+    "test": "node --test test/unit/*.test.mjs",
+    "test:integration": "node --test --test-concurrency=1 test/integration/*.test.mjs",
+    "db:migrate": "node scripts/migrate.mjs",
+    "db:verify": "node scripts/verify.mjs",
+    "token:create": "node scripts/create-token.mjs",
+    "backup": "node scripts/backup.mjs",
+    "restore:verify": "node scripts/restore-verify.mjs",
+    "check": "npm test && npm run test:integration"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "helmet": "^8.3.0",
+    "zod": "^4.3.6"
+  }
+}

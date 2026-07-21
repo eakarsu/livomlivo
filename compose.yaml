@@ -1,0 +1,32 @@
+services:
+  governed-release:
+    build: ./governed-release
+    environment:
+      NODE_ENV: production
+      PORT: 3020
+      DATABASE_PATH: /var/lib/livomlivo/releases.sqlite
+      MIGRATE_ON_START: "true"
+      ALLOWED_ORIGINS: ""
+      IDEMPOTENCY_SECRET: ${IDEMPOTENCY_SECRET:?set IDEMPOTENCY_SECRET}
+      DEPLOYMENT_WEBHOOK_URL: ${DEPLOYMENT_WEBHOOK_URL:?set DEPLOYMENT_WEBHOOK_URL}
+      DEPLOYMENT_WEBHOOK_SECRET: ${DEPLOYMENT_WEBHOOK_SECRET:?set DEPLOYMENT_WEBHOOK_SECRET}
+      DEPLOYMENT_TIMEOUT_MS: 3000
+      DEPLOYMENT_MAX_ATTEMPTS: 3
+    ports:
+      - "3020:3020"
+    volumes:
+      - release_data:/var/lib/livomlivo
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:3020/health/live').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
+
+volumes:
+  release_data:

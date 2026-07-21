@@ -1,0 +1,9 @@
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Historical credentials removed on 2026-07-20; these legacy files must remain absent while owner rotation/history remediation is pending"
+paths = [
+  '''^serviceobjects-rest/src/test/java/tr/com/eno/livo/serviceobjects/rest/RESTServiceObjectProxyServiceTest\.java$''',
+  '''^web-ui/src/main/webapp/WEB-INF/frameworkfiles/templates/jquery/emdot/assets/js/grabtweets\.php$'''
+]
