@@ -1,4 +1,4 @@
-import { randomUUID } from "node:crypto";
+import { createHash, randomBytes, randomUUID, scryptSync, timingSafeEqual } from "node:crypto";
 import express from "express";
 import helmet from "helmet";
 import { verifyAudit } from "./audit.mjs";
@@ -47,6 +47,62 @@ export function createApp({ database, config, fetchImplementation = fetch, logge
     const ready = migrations.ok && activeTokens > 0;
     res.status(ready ? 200 : 503).json({ status: ready ? "ready" : "not_ready", migrations, activeTokens: Number(activeTokens) });
   });
+
+  const digest = (value) => createHash("sha256").update(value).digest("hex");
+  const verifyPassword = (password, encoded) => {
+    const [algorithm, salt, expected] = String(encoded || "").split("$");
+    if (algorithm !== "scrypt" || !salt || !expected) return false;
+    const actual = scryptSync(password, salt, 64);
+    const target = Buffer.from(expected, "hex");
+    return target.length === actual.length && timingSafeEqual(target, actual);
+  };
+  const runtimeAuthenticate = (req, _res, next) => {
+    const token = parseBearer(req.get("Authorization"));
+    const session = token ? database.prepare(`SELECT s.user_id,u.email,u.name,u.role,u.active
+      FROM runtime_sessions s JOIN runtime_users u ON u.id=s.user_id
+      WHERE s.token_digest=? AND s.expires_at>?`).get(digest(token), new Date().toISOString()) : null;
+    if (!session || session.active !== 1) return next(new HttpError(401, "UNAUTHENTICATED", "A valid runtime session is required"));
+    req.runtimeUser = session;
+    next();
+  };
+
+  app.post("/api/auth/login", (req, res, next) => {
+    try {
+      const email = typeof req.body?.email === "string" ? req.body.email.trim().toLowerCase() : "";
+      const password = typeof req.body?.password === "string" ? req.body.password : "";
+      const user = email ? database.prepare("SELECT * FROM runtime_users WHERE email=?").get(email) : null;
+      if (!user || user.active !== 1 || !verifyPassword(password, user.password_hash)) throw new HttpError(401, "INVALID_CREDENTIALS", "Invalid credentials");
+      const token = randomBytes(32).toString("hex");
+      const now = new Date(); const expires = new Date(now.getTime() + 12 * 60 * 60 * 1000);
+      database.prepare("INSERT INTO runtime_sessions(token_digest,user_id,expires_at,created_at) VALUES(?,?,?,?)")
+        .run(digest(token), user.id, expires.toISOString(), now.toISOString());
+      res.json({ token, user: { id: user.id, email: user.email, name: user.name, role: user.role } });
+    } catch (error) { next(error); }
+  });
+  app.get("/api/auth/me", runtimeAuthenticate, (req, res) => res.json({ user: req.runtimeUser }));
+  app.post("/api/runtime-ai/recommendation", runtimeAuthenticate, asyncRoute(async (req, res) => {
+    const prompt = typeof req.body?.prompt === "string" ? req.body.prompt.trim() : "";
+    if (!prompt || prompt.length > 4000) throw new HttpError(400, "INVALID_PROMPT", "Prompt must contain 1-4000 characters");
+    const apiKey = String(process.env.OPENROUTER_API_KEY || "").trim();
+    const model = String(process.env.OPENROUTER_MODEL || "").trim();
+    const baseUrl = String(process.env.OPENROUTER_BASE_URL || "").replace(/\/$/, "");
+    if (!apiKey || !model || !baseUrl) throw new HttpError(503, "AI_NOT_CONFIGURED", "AI provider is not configured");
+    const providerResponse = await fetchImplementation(`${baseUrl}/chat/completions`, {
+      method: "POST", headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
+      body: JSON.stringify({ model, messages: [
+        { role: "system", content: "Give concise software-release governance guidance. Preserve separation of duties and require human approval for deployment decisions." },
+        { role: "user", content: prompt },
+      ], max_tokens: 180 }), signal: AbortSignal.timeout(45000),
+    });
+    const payload = await providerResponse.json().catch(() => ({}));
+    const content = String(payload?.choices?.[0]?.message?.content || "").trim();
+    if (!providerResponse.ok || !payload.id || !content) throw new HttpError(502, "AI_PROVIDER_FAILURE", `OpenRouter request failed with HTTP ${providerResponse.status}`);
+    const receiptId = randomUUID();
+    database.prepare(`INSERT INTO runtime_ai_provider_receipts
+      (id,user_id,provider,provider_request_id,model,prompt,content,created_at) VALUES(?,?,'openrouter',?,?,?,?,?)`)
+      .run(receiptId, req.runtimeUser.user_id, String(payload.id), String(payload.model || model), prompt, content, new Date().toISOString());
+    res.json({ content, receipt: { id: receiptId, provider: "openrouter", providerRequestId: String(payload.id), model: String(payload.model || model) } });
+  }));
 
   function authenticate(req, _res, next) {
     const token = parseBearer(req.get("Authorization"));

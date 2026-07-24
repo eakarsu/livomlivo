@@ -13,6 +13,7 @@
     "db:migrate": "node scripts/migrate.mjs",
     "db:verify": "node scripts/verify.mjs",
     "token:create": "node scripts/create-token.mjs",
+    "create-admin": "node scripts/create-admin.mjs",
     "backup": "node scripts/backup.mjs",
     "restore:verify": "node scripts/restore-verify.mjs",
     "check": "npm test && npm run test:integration"
