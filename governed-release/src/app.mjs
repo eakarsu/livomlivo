@@ -40,6 +40,14 @@ export function createApp({ database, config, fetchImplementation = fetch, logge
   app.use(express.json({ limit: "64kb", strict: true }));
 
   app.get("/health/live", (_req, res) => res.json({ status: "live" }));
+  app.get("/api/auth/demo-credentials", (_req, res, next) => {
+    if (config.nodeEnv === "production") return next(new HttpError(404, "NOT_FOUND", "Not found"));
+    const email = process.env.PROVISION_ADMIN_EMAIL || process.env.ADMIN_EMAIL || "";
+    const password = process.env.PROVISION_ADMIN_PASSWORD || process.env.ADMIN_PASSWORD || "";
+    if (!email || !password) return next(new HttpError(503, "DEMO_CREDENTIALS_UNAVAILABLE", "Demo credentials unavailable"));
+    res.setHeader("Cache-Control", "no-store");
+    return res.json({ email, password });
+  });
   app.get("/health/ready", (_req, res) => {
     const migrations = verifyMigrations(database);
     const activeTokens = database.prepare("SELECT count(*) AS count FROM api_tokens WHERE active = 1 AND expires_at > ?")
